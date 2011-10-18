@@ -1,0 +1,6 @@
+(set-language-environment "utf-8")
+(setq inferior-lisp-program "/usr/local/bin/ccl64 -K utf-8")
+(add-to-list 'load-path "~/Dev/slime")
+(require 'slime)
+(setq slime-net-coding-system `utf-8-unix)
+(slime-setup)

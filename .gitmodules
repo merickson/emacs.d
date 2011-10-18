@@ -1,0 +1,3 @@
+[submodule "external/org2blog"]
+	path = external/org2blog
+	url = https://github.com/punchagan/org2blog.git
