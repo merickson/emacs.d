@@ -1,0 +1,9 @@
+/elpa/*
+/auto-save-list/*
+/backup/*
+semantic.cache
+tramp
+/url/*
+.org-id-locations
+ac-comphist.dat
+*~
