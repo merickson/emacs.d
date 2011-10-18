@@ -1,6 +1,5 @@
 ;; Global key re-mappings.
 
-
 ;; Make copy-region-as-kill more accessible.
 (global-set-key "\C-c\w" `copy-region-as-kill)
 (global-set-key "\C-c\C-w" `copy-region-as-kill)
@@ -31,7 +30,7 @@
 (global-set-key [(meta f3)] 'switch-to-scratch)
 
 ;; F4
-
+(global-set-key [f4] 'ac-start)
 ;; F5
 (global-set-key [f5] 'compile)
 (global-set-key [(shift f5)] 'flymake-start-syntax-check)
@@ -56,4 +55,3 @@
 ;;;; Aliases!
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'fm 'flymake-mode)
-

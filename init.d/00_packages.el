@@ -4,7 +4,7 @@
 	("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 (setq mce-required-packages
-      (list 'xml-rpc 'magit 'gh 'gist))
+      (list 'xml-rpc 'magit 'gh 'gist 'auto-complete 'yasnippet))
 (dolist (package mce-required-packages)
   (when (not (package-installed-p package))
     (package-refresh-contents)

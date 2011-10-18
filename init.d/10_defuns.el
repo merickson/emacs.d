@@ -22,3 +22,9 @@
   (interactive "sCommand to run: ")
   (save-buffer)
   (shell-command command))
+
+(defun prefix-list-elements (list prefix)
+  (let (value)
+    (nreverse
+     (dolist (element list value)
+       (setq value (cons (format "%s%s" prefix element) value))))))
