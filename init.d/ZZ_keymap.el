@@ -47,7 +47,9 @@
 (global-set-key [f9] 'vc-next-action)
 
 ;; F10
-(global-set-key [f10] 'sr-speedbar-toggle)
+(global-set-key [f10] 'org-agenda)
+(global-set-key [(shift f10)] 'org-store-link)
+(global-set-key [(meta f10)] 'org-iswitchb)
 
 ;; F11
 (global-set-key [f11] 'switch-to-buffer-other-window)

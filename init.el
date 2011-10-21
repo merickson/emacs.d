@@ -3,6 +3,7 @@
 ;; Basic setup
 (require 'cl)
 (require 'eieio) ; for gh.el
+(server-start)
 
 ;; Figure out where we are...
 (setq mce-emacs-init-file load-file-name)
