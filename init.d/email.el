@@ -17,8 +17,21 @@
 (when (file-readable-p "/usr/local/share/emacs/site-lisp/notmuch.el")
   (setq load-path (cons "/usr/local/share/emacs/site-lisp" load-path))
   (require 'notmuch)
+  (require 'offlineimap)
+  (offlineimap)
   (define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
-  (define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete))
+  (define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
+  (defun mce-check-notmuch ()
+    (interactive)
+    (let ((sum 0))
+      (dolist (elem notmuch-saved-searches sum)
+        (if (or (equal "spideroak-unread" (car elem))
+                (equal "personal-unread" (car elem)))
+            (setq sum (+ sum 
+                         (string-to-number 
+                          (notmuch-saved-search-count (cdr elem)))))))
+      (> sum 0)))
+  (setq display-time-mail-function 'mce-check-notmuch))
 
 ;; Make sure newly sent mail properly gets its buffer killed.
 (setq message-kill-buffer-on-exit t)

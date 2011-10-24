@@ -1,3 +1,6 @@
 [submodule "external/org2blog"]
 	path = external/org2blog
 	url = https://github.com/punchagan/org2blog.git
+[submodule "external/offlineimap-el"]
+	path = external/offlineimap-el
+	url = git://git.naquadah.org/offlineimap-el.git

@@ -43,8 +43,7 @@
   "Create a new frame and run org-remember."
   (interactive)
   (make-frame '((name . "Org-Capture") (width . 80) (height . 30)))
-  (select-frame-by-Org "Org-Capture")
-  (add-hook 'org-capture-mode-hook 'delete-other-windows)
+  (select-frame-by-name "Org-Capture")
   (org-capture)
   (delete-other-windows))
 

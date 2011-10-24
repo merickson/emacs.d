@@ -16,6 +16,10 @@
 (setq default-indicate-buffer-boundaries 'left)
 (setq tuncate-partial-width-windows nil)
 
+;; Modeline stuff
+(display-time-mode)
+(setq display-time-24hr-format t)
+
 ;; Of things relating to line and column numbers.
 (column-number-mode t)
 ;; Only show line numbers where we want it.
