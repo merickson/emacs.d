@@ -4,7 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-trigger-key nil)
- '(notmuch-saved-searches (quote (("SpiderOak-Blue" . "tag:soblue") ("spideroak-unread" . "folder:inbox AND to:*@spideroak.com AND tag:unread") ("spideroak-inbox" . "folder:inbox AND tag:inbox AND to:*@spideroak.com") ("inbox" . "tag:inbox") ("unread" . "tag:unread") ("personal-unread" . "folder:inbox AND to:*@peawee.net AND tag:unread") ("personal-inbox" . "folder:inbox AND tag:inbox AND to:*@peawee.net"))))
+ '(notmuch-poll-script "/Users/matt/bin/postprocess_new_mail.sh")
+ '(notmuch-saved-searches (quote (("SpiderOak-Blue" . "tag:soblue") ("spideroak-unread" . "folder:inbox AND to:*@spideroak.com AND tag:unread") ("spideroak-inbox" . "folder:inbox AND tag:inbox AND to:*@spideroak.com") ("inbox" . "tag:inbox") ("unread" . "tag:unread") ("personal-unread" . "to:*@peawee.net AND tag:unread AND folder:inbox") ("personal-inbox" . "tag:inbox AND to:*@peawee.net AND NOT (folder:spam OR folder:junk)"))))
  '(offlineimap-command "offlineimap -u machineui")
  '(package-archives (quote (("Marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/")))))
 (custom-set-faces

@@ -15,15 +15,15 @@
 ;; Org capture templates
 (setq org-capture-templates
       (quote (("t" "todo" entry (file (concat org-directory "/capture.org"))
-               "* TODO %?\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+               "* TODO %?\n%U\n%a\n  %i")
               ("n" "note" entry (file (concat org-directory "capture.org"))
-               "* %? :NOTE:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+               "* %? :NOTE:\n%U\n%a\n  %i")
               ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-               "* %?\n%U\n  %i" :clock-in t :clock-resume t)
+               "* %?\n%U\n  %i")
               ("w" "org-protocol" entry (file (concat org-directory "/capture.org"))
                "* TODO Review %c\n%U\n  %i" :immediate-finish t)
               ("p" "Phone call" entry (file (concat org-directory "/capture.org"))
-               "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t))))
+               "* PHONE %? :PHONE:\n%U"))))
 
 (setq org-link-abbrev-alist
       '(("sotrac" . "https://spideroak.com/pandora/ticket/")
