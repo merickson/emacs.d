@@ -8,6 +8,11 @@
 	 "/usr/local/bin" ":"
 	 "/usr/local/sbin" ":"
 	 (getenv "PATH")))
+(setenv "PYTHONPATH"
+        (concat
+         "/Users/matt/Dev/SpiderOak/pandora" ":"
+         "/Users/matt/Dev/SpiderOak/net_kes/lib" ":"
+         (getenv "PYTHONPATH")))
 
 (setq exec-path
       (append '("~/bin"

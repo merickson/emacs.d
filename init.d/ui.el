@@ -17,8 +17,8 @@
 (setq tuncate-partial-width-windows nil)
 
 ;; Modeline stuff
-(display-time-mode)
 (setq display-time-24hr-format t)
+(display-time-mode)
 
 ;; Of things relating to line and column numbers.
 (column-number-mode t)
@@ -35,7 +35,7 @@
 (set-face-background 'hl-line "grey15")
 
 ;; Font!
-(set-default-font "Mensch-13")
+(set-default-font "Inconsolata-14")
 
 ;; Compilation-mode
 ; Tell compile mode to always follow the bottom of the compile.

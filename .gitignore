@@ -7,3 +7,4 @@ tramp
 .org-id-locations
 ac-comphist.dat
 *~
+/mce-priv-data.el
