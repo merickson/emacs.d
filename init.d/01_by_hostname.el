@@ -12,6 +12,7 @@
         (concat
          "/Users/matt/Dev/SpiderOak/pandora" ":"
          "/Users/matt/Dev/SpiderOak/net_kes/lib" ":"
+         "/usr/local/lib/python" ":"
          (getenv "PYTHONPATH")))
 
 (setq exec-path

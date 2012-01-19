@@ -1,12 +1,21 @@
 (require 'erc-match)
 (require 'tls)
 (require 'netrc)
+
+
+;; Various and sundry options.
 (setq erc-keywords '("@ALL"))
 (erc-match-mode t)
 
 (setq erc-echo-notices-in-minibuffer-flag t)
 (erc-scrolltobottom-mode)
 (erc-track-mode)
+
+;; nick unique highlighting
+(and
+ (require 'erc-highlight-nicknames)
+ (add-to-list 'erc-modules 'highlight-nicknames)
+ (erc-update-modules))
 
 (defun mce-make-server-channel-list (server channel-alist)
   "Combines elements from channel-alist and the server"

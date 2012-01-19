@@ -4,3 +4,6 @@
 [submodule "external/offlineimap-el"]
 	path = external/offlineimap-el
 	url = git://git.naquadah.org/offlineimap-el.git
+[submodule "external/gnus-alias"]
+	path = external/gnus-alias
+	url = https://github.com/altruizine/gnus-alias.git
