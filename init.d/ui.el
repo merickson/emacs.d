@@ -4,6 +4,7 @@
 ;; Color scheme.
 (add-to-list 'default-frame-alist '(foreground-color . "white"))
 (add-to-list 'default-frame-alist '(background-color . "black"))
+(add-to-list 'default-frame-alist '(font . "Menlo-14"))
 
 (set-cursor-color "green")
 

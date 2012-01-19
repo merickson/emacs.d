@@ -18,3 +18,11 @@
 (setq yas/trigger-key (kbd "C-c <kp-multiply>"))
 (yas/initialize)
 (yas/load-directory (expand-file-name "snippets" mce-emacs-config-dir))
+
+; Spell checking
+(setq ispell-program-name "aspell")
+(setq ispell-list-command "list")
+
+; TRAMP configuration
+(setq tramp-default-method "ssh")
+
