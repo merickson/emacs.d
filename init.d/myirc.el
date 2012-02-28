@@ -23,9 +23,10 @@
     (dolist (element channel-alist value)
       (setq value (cons (list server element) value)))))
 
-(setq erc-autojoin-channels-alist
-      (mce-make-server-channel-list 
-       mce-irc-spideroaknet mce-irc-spideroakchannel-alist))
+(when (boundp 'mce-irc-spideroaknet)
+  (setq erc-autojoin-channels-alist
+        (mce-make-server-channel-list 
+         mce-irc-spideroaknet mce-irc-spideroakchannel-alist)))
 
 (defmacro de-erc-connect (command server port nick pass)
   "Create interactive command for connecting to an IRC server.  The

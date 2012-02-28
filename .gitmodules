@@ -7,3 +7,6 @@
 [submodule "external/gnus-alias"]
 	path = external/gnus-alias
 	url = https://github.com/altruizine/gnus-alias.git
+[submodule "external/auto-complete"]
+	path = external/auto-complete
+	url = http://cx4a.org/repo/auto-complete.git
