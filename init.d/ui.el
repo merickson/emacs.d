@@ -4,7 +4,7 @@
 ;; Color scheme.
 (add-to-list 'default-frame-alist '(foreground-color . "white"))
 (add-to-list 'default-frame-alist '(background-color . "black"))
-(add-to-list 'default-frame-alist '(font . "Menlo-14"))
+(add-to-list 'default-frame-alist '(font . "Mensch-12"))
 
 (set-cursor-color "green")
 
@@ -36,7 +36,7 @@
 (set-face-background 'hl-line "grey15")
 
 ;; Font!
-(set-default-font "Inconsolata-14")
+(set-default-font "Mensch-12")
 
 ;; Compilation-mode
 ; Tell compile mode to always follow the bottom of the compile.
