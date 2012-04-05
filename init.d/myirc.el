@@ -41,6 +41,6 @@
 (autoload 'erc "erc" "" t)
 (de-erc-connect erc-so 
                 (netrc-get mce-netrc-sochat "machine")
-                mce-irc-soport
+                mce-irc-port
                 (netrc-get mce-netrc-sochat "login")
                 (netrc-get mce-netrc-sochat "password"))
