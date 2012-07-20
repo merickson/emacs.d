@@ -17,7 +17,7 @@
 
 ;;;; F-key remappings
 ;; F1
-(global-set-key [f1] 'gnus)
+(global-set-key [f1] 'notmuch)
 
 ;; F2 should always mean something to do with the shell.
 (global-set-key [(shift f2)] 'ansi-term)

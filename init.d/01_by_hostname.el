@@ -12,6 +12,7 @@
         (concat
          "/Users/matt/Dev/SpiderOak/pandora" ":"
          "/Users/matt/Dev/SpiderOak/net_kes/lib" ":"
+         "/Users/matt/Dev/SpiderOak/pandora-email" ":"
          "/usr/local/lib/python" ":"
          (getenv "PYTHONPATH")))
 

@@ -6,6 +6,9 @@
                              (concat org-directory "/spideroak.org")
                              (concat org-directory "/mylife.org")))
 
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/capture.org")
+
 (setq org-log-done t)
 (setq org-refile-use-outline-path t)
 (setq org-use-fast-todo-selection t)
