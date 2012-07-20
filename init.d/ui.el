@@ -41,3 +41,26 @@
 ;; Compilation-mode
 ; Tell compile mode to always follow the bottom of the compile.
 (setq compilation-scroll-output t)
+
+;; Use a bar cursor when mark is active and a region exists.
+(defun th-activate-mark-init ()
+  (setq cursor-type 'bar))
+(add-hook 'activate-mark-hook 'th-activate-mark-init)
+
+(defun th-deactivate-mark-init ()
+  (setq cursor-type 'box))
+(add-hook 'deactivate-mark-hook 'th-deactivate-mark-init)
+
+;; Use a red cursor in overwrite-mode
+(defvar th--default-cursor-color "black")
+(defadvice overwrite-mode (after th-overwrite-mode-change-cursor activate)
+  "Change cursor color in override-mode."
+  (if overwrite-mode
+      (progn
+        (setq th--default-cursor-color
+              (let ((f (face-attribute 'cursor :background)))
+                (if (stringp f)
+                    f
+                  th--default-cursor-color)))
+        (set-cursor-color "red"))
+    (set-cursor-color th--default-cursor-color)))
