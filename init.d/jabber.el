@@ -1,2 +1,2 @@
-(require 'jabber)
+;(require 'jabber)
 

@@ -1,7 +1,8 @@
 (require 'tls)
 (require 'netrc)
 
-(eval-after-load 'rcirc '(require 'rcirc-color))
+(when window-system
+  (eval-after-load 'rcirc '(require 'rcirc-color)))
 
 (rcirc-track-minor-mode 1)
 
@@ -9,7 +10,8 @@
 (add-hook 'rcirc-mode-hook (lambda ()
                              (flyspell-mode 1)))
 
-(setq rcirc-server-alist (list mce-irc-spideroak-alist))
+(when (boundp 'mce-irc-spideroak-alist)
+  (setq rcirc-server-alist (list mce-irc-spideroak-alist)))
 
 ;; (add-to-list 'rcirc-server-alist
 ;;              '(mce-irc-spideroaknet
