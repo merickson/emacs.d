@@ -10,6 +10,10 @@
     (package-refresh-contents)
     (package-install package)))
 
+; Setup notmuch
+(when (file-directory-p "~/src/notmuch/emacs")
+  (add-to-list 'load-path "~/src/notmuch/emacs"))
+
 ; Setup the external packages load paths.
 (setq mce-elisp-external-dir
       (expand-file-name "external" mce-emacs-config-dir))
