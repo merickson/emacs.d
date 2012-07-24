@@ -4,7 +4,9 @@
 ;; Color scheme.
 (add-to-list 'default-frame-alist '(foreground-color . "white"))
 (add-to-list 'default-frame-alist '(background-color . "black"))
-(add-to-list 'default-frame-alist '(font . "Mensch-12"))
+(case window-system
+  ('ns (add-to-list 'default-frame-alist '(font . "Mensch-12")))
+  ('x  (add-to-list 'default-frame-alist `(font . "Inconsolata-11"))))
 
 (set-cursor-color "green")
 
