@@ -57,3 +57,5 @@
 ;;;; Aliases!
 (defalias 'qrr 'query-replace-regexp)
 (defalias 'fm 'flymake-mode)
+(defalias 'ms 'magit-status)
+(defalias 'mpull 'magit-pull)
