@@ -2,10 +2,10 @@
 ;; How I want Emacs to look and feel.
 
 ;; Color scheme.
-(add-to-list 'default-frame-alist '(foreground-color . "white"))
-(add-to-list 'default-frame-alist '(background-color . "black"))
 (add-to-list 'default-frame-alist '(font . "Mensch-12"))
 
+;; Set the color scheme
+(color-theme-solarized-dark)
 (set-cursor-color "green")
 
 ;; Code display options

@@ -18,4 +18,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.85 :family "Inconsolata")))))
+ '(mode-line ((t (:background "#0a2832" :foreground "#81908f" :inverse-video t :box nil :underline nil :slant normal :weight normal :height 0.85 :family "Mensch"))))
+ '(mode-line-inactive ((t (:background "#0a2832" :foreground "#52676f" :inverse-video t :box nil :underline nil :slant normal :weight normal :height 0.85 :family "Mensch")))))
