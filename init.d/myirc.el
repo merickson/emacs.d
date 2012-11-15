@@ -120,7 +120,7 @@
 			  (format "reconnection attempt failed: %s" err)  t)
 	     (rcirc-reconnect-schedule process))))))))
 
-
+(eval-after-load 'rcirc '(require 'rcirc-notify))
 
 (defun mce-make-server-channel-list (server channel-alist)
   "Combines elements from channel-alist and the server"
