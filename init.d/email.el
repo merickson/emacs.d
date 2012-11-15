@@ -16,18 +16,16 @@
   (notmuch-search-tag "-unread")
   (forward-line))
 
+(setq gnus-inhibit-images nil)
+
 ;; Check notmuch for new email.
 (defun mce-check-new-email ()
   "t if there is new unread email, nil if not"
   )
 
-(when (file-readable-p "/usr/local/share/emacs/site-lisp/notmuch.el")
-  (setq load-path (cons "/usr/local/share/emacs/site-lisp" load-path))
-  (require 'notmuch)
-  (define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
-  (define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
-
-  )
+(require 'notmuch)
+(define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
+(define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
 
 ;; Make sure newly sent mail properly gets its buffer killed.
 (setq message-kill-buffer-on-exit t)
