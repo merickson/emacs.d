@@ -26,5 +26,6 @@
 ; TRAMP configuration
 (setq tramp-default-method "ssh")
 
-; Setup comint to remove echoes.
-(setq comint-process-echoes t)
+;; Set the backup files to go into a specific directory.
+(setq backup-directory-alist
+      (list (cons "." (expand-file-name "backup" mce-emacs-config-dir))))
