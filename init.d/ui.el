@@ -6,6 +6,8 @@
   ('ns (add-to-list 'default-frame-alist '(font . "Mensch-12")))
   ('x  (add-to-list 'default-frame-alist `(font . "Inconsolata-11"))))
 
+(set-default-font "Mensch-12")
+
 ;; Set the color scheme
 (color-theme-solarized-dark)
 (set-cursor-color "green")
@@ -37,12 +39,15 @@
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "grey15")
 
-;; Font!
-(set-default-font "Mensch-12")
-
 ;; Compilation-mode
 ; Tell compile mode to always follow the bottom of the compile.
 (setq compilation-scroll-output t)
+
+;; Auto-Revert mode, and auto-revert for dired.
+(global-auto-revert-mode 1)
+
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
 
 ;; Use a bar cursor when mark is active and a region exists.
 (defun th-activate-mark-init ()
