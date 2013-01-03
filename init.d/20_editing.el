@@ -1,7 +1,5 @@
 ;; Editing-specific customizations
 
-(require 'auto-complete-yasnippet)
-
 ; Use spaces instead of tabs.
 (setq-default indent-tabs-mode nil)
 
@@ -14,10 +12,13 @@
 (ac-flyspell-workaround)
 
 ; Yasnippet
-(require 'yasnippet)
-(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
-(yas/initialize)
-(yas/load-directory (expand-file-name "snippets" mce-emacs-config-dir))
+;(require 'yasnippet)
+;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
+;(yas/initialize)
+;(yas/load-directory (expand-file-name "snippets" mce-emacs-config-dir))
+
+(require 'auto-complete-yasnippet)
+
 
 ; Spell checking
 (setq ispell-program-name "aspell")
