@@ -9,6 +9,8 @@
 (set-default-font "Mensch-12")
 
 ;; Set the color scheme
+(require 'color-theme)
+(color-theme-initialize)
 (color-theme-solarized-dark)
 (set-cursor-color "green")
 
