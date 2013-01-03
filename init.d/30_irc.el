@@ -4,6 +4,9 @@
 (when window-system
   (eval-after-load 'rcirc '(require 'rcirc-color)))
 
+(eval-after-load 'rcirc '(require 'rcirc-notify))
+
+
 (rcirc-track-minor-mode 1)
 
 ;; Turn on flyspell-mode for rcirc.
