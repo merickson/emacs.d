@@ -7,6 +7,7 @@
 	 "~/bin" ":"
 	 "/usr/local/bin" ":"
 	 "/usr/local/sbin" ":"
+         "/usr/texbin" ":"
 	 (getenv "PATH")))
 (setenv "PYTHONPATH"
         (concat
