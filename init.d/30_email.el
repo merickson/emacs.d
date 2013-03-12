@@ -17,6 +17,34 @@
   (forward-line))
 
 (require 'gnus-art)
+(require 'gnus-alias)
+(setq gnus-alias-identity-alist
+      '(("work-big"
+         nil
+         "Matthew Erickson <matt@spideroak.com>"
+         nil ;;no organization header
+         (("Fcc" . "/Users/matt/Mail/Spideroak/Sent Messages"))
+         nil ;;no body text
+         "Matthew Erickson
+Director of Software Development, SpiderOak
+skype: peawee03
+office: 815/513-1242"
+         )
+        ("work"
+         nil
+         "Matthew Erickson <matt@spideroak.com>"
+         nil ;;no organization header
+         (("Fcc" . "/Users/matt/Mail/Spideroak/Sent Messages"))
+         nil ;;no body text
+         "Matt"
+         )
+        ("personal"
+         nil
+         "Matthew Erickson <peawee@peawee.net>"
+         nil
+         (("Fcc" . "/Users/matt/Mail/Personal/Sent Messages"))
+         nil
+         "Matt")))
 
 ;; Check notmuch for new email.
 (defun mce-check-new-email ()
