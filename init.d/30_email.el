@@ -16,7 +16,7 @@
   (notmuch-search-tag "-unread")
   (forward-line))
 
-(setq gnus-inhibit-images nil)
+(require 'gnus-art)
 
 ;; Check notmuch for new email.
 (defun mce-check-new-email ()
