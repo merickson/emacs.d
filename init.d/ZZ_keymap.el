@@ -59,3 +59,4 @@
 (defalias 'fm 'flymake-mode)
 (defalias 'ms 'magit-status)
 (defalias 'mpull 'magit-pull)
+(defalias 'gaid 'gnus-alias-select-identity)
