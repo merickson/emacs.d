@@ -19,8 +19,9 @@
  '(gnus-alias-identity-rules nil)
  '(gnus-inhibit-images nil)
  '(gnus-select-method (quote (nnmbox "/var/mail/matt")))
+ '(jabber-account-list (quote (("peawee@gmail.com" (:password . "B0n0nnaM0n") (:network-server . "talk.google.com") (:connection-type . ssl)))))
  '(notmuch-poll-script "")
- '(notmuch-saved-searches (quote (("SpiderOak-Blue" . "tag:soblue") ("spideroak-unread" . "folder:inbox AND to:*@spideroak.com AND tag:unread") ("spideroak-inbox" . "folder:inbox AND tag:inbox AND to:*@spideroak.com") ("inbox" . "tag:inbox") ("unread" . "tag:unread") ("personal-unread" . "to:*@peawee.net AND tag:unread AND folder:inbox") ("personal-inbox" . "tag:inbox AND to:*@peawee.net AND NOT (folder:spam OR folder:junk)") ("flagged" . "tag:flagged") ("issues-unread" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com) and tag:unread"))))
+ '(notmuch-saved-searches (quote (("SpiderOak-Blue" . "tag:soblue") ("spideroak-unread" . "folder:Spideroak/INBOX AND tag:unread") ("spideroak-inbox" . "folder:Spideroak/INBOX AND tag:inbox") ("inbox" . "tag:inbox") ("unread" . "tag:unread") ("personal-unread" . "folder:Personal/INBOX AND tag:unread") ("personal-inbox" . "folder:Personal/INBOX AND tag:inbox") ("flagged" . "tag:flagged") ("issues-unread" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com) and tag:unread"))))
  '(offlineimap-command "offlineimap -u machineui")
  '(package-archives (quote (("Marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/")))))
 (custom-set-faces
