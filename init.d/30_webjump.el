@@ -8,3 +8,10 @@
                    "duckduckgo.com"
                    "https://duckduckgo.com/?q="
                    ""])))
+
+;; Load up private information
+(eval-after-load "webjump"
+  '(dolist (elt mce-webjumps)
+     (add-to-list 'webjump-sites elt)))
+
+

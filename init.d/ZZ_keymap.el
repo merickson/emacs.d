@@ -18,6 +18,7 @@
 ;;;; F-key remappings
 ;; F1
 (global-set-key [f1] 'notmuch)
+(global-set-key [(shift f1)] 'gnus-alias-select-identity)
 
 ;; F2 should always mean something to do with the shell.
 (global-set-key [(shift f2)] 'ansi-term)
@@ -44,10 +45,11 @@
 (global-set-key [f8] 'flymake-goto-next-error)
 
 ;; F9
-(global-set-key [f9] 'vc-next-action)
+(global-set-key [f9] 'magit-status)
 
 ;; F10
 (global-set-key [f10] 'org-agenda)
+(global-set-key [(control f10)] 'make-remember-frame)
 (global-set-key [(shift f10)] 'org-store-link)
 (global-set-key [(meta f10)] 'org-iswitchb)
 

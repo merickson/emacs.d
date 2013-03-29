@@ -3,17 +3,43 @@
 
 (setq org-directory "~/org-files")
 (setq org-agenda-files (list (concat org-directory "/capture.org")
-                             (concat org-directory "/spideroak.org")
-                             (concat org-directory "/mylife.org")))
+                             (concat org-directory "/biggtd.org")))
 
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/capture.org")
 
 (setq org-log-done t)
+(setq org-agenda-include-diary nil)
+(setq org-deadline-warning-days 7)
+(setq org-timeline-show-empty-dates t)
+(setq org-insert-mode-line-in-empty-file t)
 (setq org-refile-use-outline-path t)
 (setq org-use-fast-todo-selection t)
-(org-remember-insinuate)
+;(org-remember-insinuate)
 (setq org-default-notes-file (concat org-directory "/capture.org"))
+
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
+;; Org agenda configuration.
+(setq org-agenda-show-all-dates t)
+(setq org-agenda-window-setup (quote current-window))
+
+(setq org-agenda-custom-commands
+      '(
+        ("P" "Projects"
+         ((tags "PROJECT")))
+        ("W" "Work Lists"
+         ((agenda)
+          (tags-todo "WORK")
+          (tags-todo "COMPUTER")
+          (tags-todo "READING")))
+        ("D" "Daily Action List"
+         ((agenda "" ((org-agenda-ndays 1)
+                      (org-agenda-sorting-strategy
+                       (quote ((agenda time-up priority-down tag-up))))
+                      (org-deadline-warning-days 0)
+                      ))))
+        ))
 
 ;; Org capture templates
 (setq org-capture-templates
@@ -30,7 +56,7 @@
 
 (setq org-link-abbrev-alist
       '(("sotrac" . "https://spideroak.com/pandora/ticket/")
-        ("sort"   . "https://spideroak.com/rt/")))
+        ("sort"   . "https://spideroak.com/rt-beta/Ticket/Display.html?id=")))
 
 (defadvice org-capture-finalize (after delete-remember-frame activate)
   "Advise remember-finalize to close the frame if it is the remember frame"
