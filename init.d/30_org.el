@@ -1,5 +1,6 @@
 ;; Org-mode customizations.
 (require 'org-install)
+(require 'org-notmuch)
 
 (setq org-directory "~/org-files")
 (setq org-agenda-files (list (concat org-directory "/capture.org")

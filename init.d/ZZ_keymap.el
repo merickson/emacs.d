@@ -32,6 +32,7 @@
 
 ;; F4
 (global-set-key [f4] 'ac-start)
+
 ;; F5
 (global-set-key [f5] 'compile)
 (global-set-key [(shift f5)] 'flymake-start-syntax-check)
@@ -41,6 +42,8 @@
 (global-set-key [(shift f6)] 'kmacro-end-or-call-macro)
 
 ;; F7
+(global-set-key [f7] 'webjump)
+
 ;; F8
 (global-set-key [f8] 'flymake-goto-next-error)
 

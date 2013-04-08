@@ -91,4 +91,5 @@ office: 815/513-1242"
      (add-to-list 'message-mode-hook
                   '(lambda ()
                      (define-key message-mode-map "\C-c\t" 'external-abook-try-expand)))
-     (add-to-list 'message-mode-hook 'flyspell-mode)))
+     (add-to-list 'message-mode-hook 'flyspell-mode)
+     (add-to-list 'message-mode-hook 'visual-line-mode)))
