@@ -6,11 +6,13 @@
         ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
 (setq mce-required-packages
-      (list 'xml-rpc 'magit 'gh 'gist 'yasnippet 'ipython))
+      (list 'save-packages))
 (dolist (package mce-required-packages)
   (when (not (package-installed-p package))
     (package-refresh-contents)
     (package-install package)))
+
+(install-saved-packages)
 
 ; Setup notmuch
 (when (file-directory-p "~/src/notmuch/emacs")
