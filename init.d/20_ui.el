@@ -1,12 +1,5 @@
 ;; myui.el
-;; How I want Emacs to look and feel.
-
-;; The Correct Font.
-;; (case window-system
-;;   ('ns (add-to-list 'default-frame-alist '(font . "Mensch-12")))
-;;   ('x  (add-to-list 'default-frame-alist `(font . "Inconsolata-11"))))
-
-(set-default-font "SourceCodePro-Regular-13")
+;; How I want Emacs to look and feel. 
 
 ;; Set the color scheme
 (require 'color-theme)

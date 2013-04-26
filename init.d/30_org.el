@@ -2,7 +2,8 @@
 (require 'org-install)
 (require 'org-notmuch)
 
-(setq org-directory "~/org-files")
+(setq diary-file "~/SpiderOak Hive/org-files/diary")
+(setq org-directory "~/SpiderOak Hive/org-files")
 (setq org-agenda-files (list (concat org-directory "/capture.org")
                              (concat org-directory "/biggtd.org")))
 
@@ -10,7 +11,7 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/capture.org")
 
 (setq org-log-done t)
-(setq org-agenda-include-diary nil)
+(setq org-agenda-include-diary t)
 (setq org-deadline-warning-days 7)
 (setq org-timeline-show-empty-dates t)
 (setq org-insert-mode-line-in-empty-file t)

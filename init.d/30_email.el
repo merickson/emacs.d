@@ -23,7 +23,7 @@
          nil
          "Matthew Erickson <matt@spideroak.com>"
          nil ;;no organization header
-         (("Fcc" . "/Users/matt/Mail/Spideroak/Sent Messages"))
+         (("Fcc" . "~/Mail/Spideroak/Sent Messages"))
          nil ;;no body text
          "Matthew Erickson
 Director of Software Development, SpiderOak
@@ -34,7 +34,7 @@ office: 815/513-1242"
          nil
          "Matthew Erickson <matt@spideroak.com>"
          nil ;;no organization header
-         (("Fcc" . "/Users/matt/Mail/Spideroak/Sent Messages"))
+         (("Fcc" . "~/Mail/Spideroak/Sent Messages"))
          nil ;;no body text
          "Matt"
          )
@@ -42,7 +42,7 @@ office: 815/513-1242"
          nil
          "Matthew Erickson <peawee@peawee.net>"
          nil
-         (("Fcc" . "/Users/matt/Mail/Personal/Sent Messages"))
+         (("Fcc" . "~/Mail/Personal/Sent Messages"))
          nil
          "Matt")))
 
@@ -60,7 +60,7 @@ office: 815/513-1242"
 
 ;; Configure for multiple SMTP accounts
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
-(setq sendmail-program "msmtp")
+(setq sendmail-program "run_msmtp.sh")
 (setq user-full-name "Matthew Erickson")
 
 ;; Following is to auto-set the msmtp account based on the From field.
