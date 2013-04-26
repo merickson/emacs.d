@@ -17,7 +17,7 @@
  '(message-fill-column nil)
  '(notmuch-crypto-process-mime t)
  '(notmuch-poll-script "")
- '(notmuch-saved-searches (quote (("SpiderOak-Blue" . "tag:soblue") ("spideroak-unread" . "folder:Spideroak/INBOX AND tag:unread AND tag:inbox") ("spideroak-inbox" . "folder:Spideroak/INBOX AND tag:inbox") ("inbox" . "tag:inbox") ("unread" . "tag:unread") ("personal-unread" . "folder:Personal/INBOX AND tag:unread AND tag:inbox") ("personal-inbox" . "folder:Personal/INBOX AND tag:inbox") ("flagged" . "tag:flagged") ("issues" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com)") ("issues-unread" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com) and tag:unread") ("emacs-unread" . "tag:emacs AND tag:unread") ("RecentGoToMeeting" . "GoToMeeting Invitation date:2_weeks..") ("Sales Fliers" . "folder:\"Personal/Sales Fliers\""))))
+ '(notmuch-saved-searches (quote (("SpiderOak-Blue" . "tag:soblue") ("spideroak-unread" . "folder:Spideroak/INBOX AND tag:unread AND tag:inbox") ("spideroak-inbox" . "folder:Spideroak/INBOX AND tag:inbox") ("inbox" . "tag:inbox") ("unread" . "tag:unread") ("personal-unread" . "folder:Personal/INBOX AND tag:unread AND tag:inbox") ("personal-inbox" . "folder:Personal/INBOX AND tag:inbox") ("flagged" . "tag:flagged") ("issues" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com)") ("issues-unread" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com) and tag:unread") ("emacs-unread" . "tag:emacs AND tag:unread") ("RecentGoToMeeting" . "GoToMeeting Invitation date:2_weeks.."))))
  '(notmuch-show-all-multipart/alternative-parts nil)
  '(offlineimap-command "offlineimap -u machineui")
  '(org-agenda-span 5)
@@ -27,5 +27,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
  '(mode-line ((t (:background "#0a2832" :foreground "#81908f" :inverse-video t :box nil :underline nil :slant normal :weight normal :height 0.85 :family "Mensch"))))
  '(mode-line-inactive ((t (:background "#0a2832" :foreground "#52676f" :inverse-video t :box nil :underline nil :slant normal :weight normal :height 0.85 :family "Mensch")))))
