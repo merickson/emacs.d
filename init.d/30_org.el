@@ -47,7 +47,9 @@
 (setq org-capture-templates
       (quote (("t" "todo" entry (file (concat org-directory "/capture.org"))
                "* TODO %?\n%U\n%a\n  %i")
-              ("n" "note" entry (file (concat org-directory "capture.org"))
+              ("c" "calendar" entry (file (concat org-directory "/capture.org"))
+               "* %?  %i")
+              ("n" "note" entry (file (concat org-directory "/capture.org"))
                "* %? :NOTE:\n%U\n%a\n  %i")
               ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
                "* %?\n%U\n  %i")
