@@ -14,6 +14,7 @@
  '(gnus-alias-identity-rules nil)
  '(gnus-inhibit-images nil)
  '(gnus-select-method (quote (nnmbox "/var/mail/matt")))
+ '(magit-set-upstream-on-push (quote askifnotset))
  '(message-fill-column nil)
  '(notmuch-crypto-process-mime t)
  '(notmuch-poll-script "")
