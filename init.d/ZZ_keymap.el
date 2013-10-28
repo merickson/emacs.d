@@ -17,7 +17,7 @@
 
 ;;;; F-key remappings
 ;; F1
-(global-set-key [f1] 'notmuch)
+;(global-set-key [f1] 'notmuch)
 (global-set-key [(shift f1)] 'gnus-alias-select-identity)
 
 ;; F2 should always mean something to do with the shell.
