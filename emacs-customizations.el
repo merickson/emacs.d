@@ -14,6 +14,7 @@
  '(gnus-alias-identity-rules nil)
  '(gnus-inhibit-images nil)
  '(gnus-select-method (quote (nnmbox "/var/mail/matt")))
+ '(magit-default-tracking-name-function (quote magit-default-tracking-name-branch-only))
  '(magit-set-upstream-on-push (quote askifnotset))
  '(message-fill-column nil)
  '(notmuch-crypto-process-mime t)
@@ -28,6 +29,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "adobe" :family "Source Code Pro"))))
- '(mode-line ((t (:background "#0a2832" :foreground "#81908f" :inverse-video t :box nil :underline nil :slant normal :weight normal :height 0.85 :family "Mensch"))))
- '(mode-line-inactive ((t (:background "#0a2832" :foreground "#52676f" :inverse-video t :box nil :underline nil :slant normal :weight normal :height 0.85 :family "Mensch")))))
+ '(default ((t (:inherit nil :stipple nil :background "#042028" :foreground "#708183" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "apple" :family "Source_Code_Pro"))))
+ '(mode-line ((t (:box nil :underline nil :slant normal :weight normal :height 100 :family "Source_Code_Pro"))))
+ '(mode-line-buffer-id ((t (:inherit mode-line :weight bold))))
+ '(mode-line-emphasis ((t (:inherit mode-line :weight bold))))
+ '(mode-line-highlight ((t (:inherit mode-line :box (:line-width 2 :color "grey40" :style released-button)))))
+ '(mode-line-inactive ((t (:inherit mode-line :inverse-video t :box nil)))))
