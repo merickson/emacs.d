@@ -17,13 +17,14 @@
 
 ;;;; F-key remappings
 ;; F1
-;(global-set-key [f1] 'notmuch)
-(global-set-key [(shift f1)] 'gnus-alias-select-identity)
 
 ;; F2 should always mean something to do with the shell.
-(global-set-key [(shift f2)] 'ansi-term)
+;;(global-set-key [(shift f2)] 'ansi-term)
 
 ;; F3
+;;(global-set-key [f3] 'notmuch)
+;;(global-set-key [(shift f3)] 'gnus-alias-select-identity)
+
 ;; Meta-F3: goto *scratch*
 (defun switch-to-scratch ()
   (interactive)
@@ -31,7 +32,7 @@
 (global-set-key [(meta f3)] 'switch-to-scratch)
 
 ;; F4
-(global-set-key [f4] 'ac-start)
+;;(global-set-key [f4] 'ac-start)
 
 ;; F5
 (global-set-key [f5] 'compile)
@@ -51,13 +52,13 @@
 (global-set-key [f9] 'magit-status)
 
 ;; F10
-(global-set-key [f10] 'org-agenda)
-(global-set-key [(control f10)] 'make-remember-frame)
-(global-set-key [(shift f10)] 'org-store-link)
-(global-set-key [(meta f10)] 'org-iswitchb)
+;;(global-set-key [f10] 'org-agenda)
+;;(global-set-key [(control f10)] 'make-remember-frame)
+;;(global-set-key [(shift f10)] 'org-store-link)
+;;(global-set-key [(meta f10)] 'org-iswitchb)
 
 ;; F11
-(global-set-key [f11] 'switch-to-buffer-other-window)
+;;(global-set-key [f11] 'switch-to-buffer-other-window)
 
 ;;;; Aliases!
 (defalias 'qrr 'query-replace-regexp)
