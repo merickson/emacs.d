@@ -4,16 +4,12 @@
 (defun my-notmuch-show-delete ()
   "toggle deleted tag for message"
   (interactive)
-  (notmuch-show-add-tag "deleted")
-  (notmuch-show-remove-tag "inbox")
-  (notmuch-show-remove-tag "unread"))
+  (notmuch-show-tag "+deleted" "-inbox" "-unread"))
 
 (defun my-notmuch-search-delete ()
   "toggle deleted tag for message"
   (interactive)
-  (notmuch-search-tag "+deleted")
-  (notmuch-search-tag "-inbox")
-  (notmuch-search-tag "-unread")
+  (notmuch-search-tag '("+deleted" "-inbox" "-unread"))
   (forward-line))
 
 (require 'gnus-art)
@@ -27,8 +23,7 @@
          nil ;;no body text
          "Matthew Erickson
 Director of Software Development, SpiderOak
-skype: peawee03
-office: 815/513-1242"
+skype: peawee03"
          )
         ("work"
          nil
@@ -46,14 +41,31 @@ office: 815/513-1242"
          nil
          "Matt")))
 
-;; Check notmuch for new email.
-(defun mce-check-new-email ()
-  "t if there is new unread email, nil if not"
-  )
 
 (require 'notmuch)
 (define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
 (define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
+
+(setq notmuch-multipart/alternative-discouraged '("text/plain" "multipart/related"))
+
+;; Check notmuch for new email.
+(defun mce-filter-search-list ()
+  "Filters the search list for what counts for new mail indication"
+  (remove-if nil
+             (mapcar (lambda (search)
+                       (when (member (car search)
+                                     mce-newmail-searches)
+                         search))
+                     notmuch-saved-searches)))
+
+(defun mce-check-new-email ()
+  "t if there is new unread email, nil if not"
+  (< 0 
+      (reduce '+
+              (mapcar (lambda (x) (car (last x)))
+                      (notmuch-hello-query-counts (mce-filter-search-list))))))
+
+(setq display-time-mail-function 'mce-check-new-email)
 
 ;; Make sure newly sent mail properly gets its buffer killed.
 (setq message-kill-buffer-on-exit t)

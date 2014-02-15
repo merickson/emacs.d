@@ -1,11 +1,22 @@
 ;; No HTML mail
-(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
+;(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
 
 (defadvice gnus-demon-scan-news (around gnus-demon-timeout activate)
   "Timeout for Gnus."
   (with-timeout
       (60 (message "Gnus timed out."))
     ad-do-it))
+
+(setq gnus-select-method '(nnml ""))
+(setq mail-sources '((imap :server "localhost"
+                           :port 1143
+                           :authentication login
+                           :user "matt@soulrobotic.com"
+                           :password "Me1sFree"
+                           :mailbox "Inbox"
+                           :stream network
+                           :dontexpunge t)))
+
 (defun mce-gnus-update ()
   (interactive)
   (gnus-demon-scan-news))
