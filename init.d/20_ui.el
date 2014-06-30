@@ -2,9 +2,7 @@
 ;; How I want Emacs to look and feel. 
 
 ;; Set the color scheme
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-solarized-dark)
+(load-theme 'solarized-dark t)
 (set-cursor-color "green")
 
 ;; Code display options
