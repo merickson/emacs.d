@@ -4,9 +4,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ac-trigger-key nil)
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (solarized-dark)))
  '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "fc5fcb6f1f1c1bc01305694c59a1a861b008c534cae8d0e48e4d5e81ad718bc6" default)))
  '(display-time-mail-face (quote default))
+ '(display-time-mode t)
  '(display-time-use-mail-icon t)
  '(erc-input-line-position -1)
  '(erc-mode-hook (quote (erc-add-scroll-to-bottom pcomplete-erc-setup erc-munge-invisibility-spec erc-button-setup erc-move-to-prompt-setup erc-imenu-setup erc-scrolltobottom-mode)))
@@ -29,7 +31,9 @@
  '(offlineimap-command "offlineimap -u machineui")
  '(org-agenda-span 5)
  '(package-archives (quote (("Marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/"))))
- '(safe-local-variable-values (quote ((virtualenv-default-directory . "~/Dev/carspeeds") (virtualenv-workon . "carspeeds")))))
+ '(safe-local-variable-values (quote ((virtualenv-default-directory . "~/Dev/carspeeds") (virtualenv-workon . "carspeeds"))))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -46,4 +50,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 113 :width normal)))))
