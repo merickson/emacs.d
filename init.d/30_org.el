@@ -1,9 +1,10 @@
 ;; Org-mode customizations.
 (require 'org-install)
 (require 'org-notmuch)
+(require 'org-outlook)
 
-(setq diary-file "~/SpiderOak Hive/org-files/diary")
-(setq org-directory "~/SpiderOak Hive/org-files")
+(setq diary-file (concat mce-so-hive "org-files/diary"))
+(setq org-directory (concat mce-so-hive "org-files"))
 (setq org-agenda-files (list (concat org-directory "/capture.org")
                              (concat org-directory "/biggtd.org")))
 
@@ -55,12 +56,20 @@
                "* %?\n%U\n  %i")
               ("w" "org-protocol" entry (file (concat org-directory "/capture.org"))
                "* TODO Review %c\n%U\n  %i" :immediate-finish t)
+              ("o" "org-outlook" entry (file (concat org-directory "/capture.org"))
+               "* TODO Email %c %?
+   %i
+   %U")
               ("p" "Phone call" entry (file (concat org-directory "/capture.org"))
                "* PHONE %? :PHONE:\n%U"))))
 
 (setq org-link-abbrev-alist
-      '(("sotrac" . "https://spideroak.com/pandora/ticket/")
-        ("sort"   . "https://spideroak.com/rt-beta/Ticket/Display.html?id=")))
+      '(("sotrac" . "https://treehouse.spideroak.com/pandora/ticket/")
+        ("sort"   . "https://treehouse.spideroak.com/rt-beta/Ticket/Display.html?id=")))
+
+(setq org-protocol-outlook-default-template-key "o")
+(org-add-link-type "outlook" 'org-outlook-open)
+(setq org-outlook-location (w32-short-file-name "c:/Program Files/Microsoft Office 15/root/OFFICE15/outlook.exe"))
 
 (defadvice org-capture-finalize (after delete-remember-frame activate)
   "Advise remember-finalize to close the frame if it is the remember frame"
