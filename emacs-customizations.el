@@ -30,7 +30,6 @@
  '(notmuch-show-all-multipart/alternative-parts nil)
  '(offlineimap-command "offlineimap -u machineui")
  '(org-agenda-span 5)
- '(package-archives (quote (("Marmalade" . "http://marmalade-repo.org/packages/") ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(safe-local-variable-values (quote ((virtualenv-default-directory . "~/Dev/carspeeds") (virtualenv-workon . "carspeeds"))))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
