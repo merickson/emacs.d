@@ -6,6 +6,10 @@
 ; If the buffer is read-only, kill just pulls to the killring without removal.
 (setq kill-read-only-ok t)
 
+; ido-mode
+(require 'ido)
+(ido-mode t)
+
 ; Auto-complete mode
 (require 'auto-complete)
 (global-auto-complete-mode t)

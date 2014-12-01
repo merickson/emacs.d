@@ -28,13 +28,14 @@
  (list "epylint" (list local-file))))
 
  (add-to-list 'flymake-allowed-file-name-masks
- '("\\.py\\'" flymake-pylint-init)))
+ '("\\.py\\'" flymake-pylint-init))
+ (add-to-list 'flymake-allowed-file-name-masks
+ '("\\.tac\\'" flymake-pylint-init)))
 
 (add-hook 'python-mode-hook
           '(lambda ()
              (flymake-mode)
              (auto-complete-mode 1)
-;             (flymake-python-pyflakes-load)
              (ropemacs-mode)
-;             (define-key python-mode-map "\t" 'mce-ac-tab)
+             (define-key python-mode-map "\t" 'mce-ac-tab)
              ))
