@@ -1,7 +1,9 @@
 ;; Org-mode customizations.
 (require 'org-install)
 (require 'org-notmuch)
-(require 'org-outlook)
+
+(if (string= system-type "windows-nt")
+    (require 'org-outlook))
 
 (setq diary-file (concat mce-so-hive "org-files/diary"))
 (setq org-directory (concat mce-so-hive "org-files"))
@@ -67,9 +69,10 @@
       '(("sotrac" . "https://treehouse.spideroak.com/pandora/ticket/")
         ("sort"   . "https://treehouse.spideroak.com/rt-beta/Ticket/Display.html?id=")))
 
-(setq org-protocol-outlook-default-template-key "o")
-(org-add-link-type "outlook" 'org-outlook-open)
-(setq org-outlook-location (w32-short-file-name "c:/Program Files/Microsoft Office 15/root/OFFICE15/outlook.exe"))
+(if (string= system-type "windows-nt")
+    ((setq org-protocol-outlook-default-template-key "o")
+     (org-add-link-type "outlook" 'org-outlook-open)
+     (setq org-outlook-location (w32-short-file-name "c:/Program Files/Microsoft Office 15/root/OFFICE15/outlook.exe"))))
 
 (defadvice org-capture-finalize (after delete-remember-frame activate)
   "Advise remember-finalize to close the frame if it is the remember frame"
