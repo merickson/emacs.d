@@ -6,5 +6,6 @@
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Yay flymake!
-(add-to-list 'load-path "$GOPATH/src/github.com/dougm/goflymake")
+(add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
 (require 'go-flymake)
+
