@@ -37,5 +37,5 @@
              (flymake-mode)
              (auto-complete-mode 1)
              (ropemacs-mode)
-             (define-key python-mode-map "\t" 'mce-ac-tab)
+             ;(define-key python-mode-map "\t" 'mce-ac-tab)
              ))
