@@ -86,7 +86,7 @@
     (require 'org-outlook)
     (setq org-protocol-outlook-default-template-key "o")
     (org-add-link-type "outlook" 'org-outlook-open)
-    (setq org-outlook-location (w32-short-file-name "c:/Program Files/Microsoft Office 15/root/OFFICE15/outlook.exe")))
+    (setq org-outlook-location "c:/Program Files/Microsoft Office 15/root/OFFICE15/outlook.exe"))
 
 (defadvice org-capture-finalize (after delete-remember-frame activate)
   "Advise remember-finalize to close the frame if it is the remember frame"
