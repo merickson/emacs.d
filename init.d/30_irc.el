@@ -1,3 +1,12 @@
+(require 'znc)
+
+(setq znc-servers mce-znc-servers)
+
+(defun mce-clear-erc-notifications ()
+  (interactive)
+  (setq erc-modified-channels-alist '())
+  (erc-modified-channels-display))
+
 ;(require 'tls)
 ;(require 'todochiku)
 ;; (require 'erc-join)
