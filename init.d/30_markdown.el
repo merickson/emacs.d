@@ -6,5 +6,6 @@
 (add-hook 'markdown-mode-hook
           '(lambda ()
              (flyspell-mode)
-             (auto-fill-mode)))
+             (auto-fill-mode nil)
+             (visual-line-mode)))
 
