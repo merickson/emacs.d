@@ -10,3 +10,9 @@
 	   (setq tramp-default-method "plink"))
   (setq mce-so-hive "~/SpiderOak Hive/"))
 
+(if (string= system-type "darwin")
+    (progn (setenv "PATH"
+                   (shell-command-to-string "launchctl getenv PATH"))
+           (exec-path-from-shell-copy-env "PATH")))
+
+
