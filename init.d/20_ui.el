@@ -64,3 +64,8 @@
                   th--default-cursor-color)))
         (set-cursor-color "red"))
     (set-cursor-color th--default-cursor-color)))
+
+(defun font-candidate (&rest fonts)
+  (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+
+(set-face-attribute 'default nil :font (font-candidate '"Consolas-14:weight=normal" "Inconsolata-13:weight=normal"))
