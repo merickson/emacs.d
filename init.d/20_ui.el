@@ -68,4 +68,4 @@
 (defun font-candidate (&rest fonts)
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
-(set-face-attribute 'default nil :font (font-candidate '"Consolas-14:weight=normal" "Inconsolata-13:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Consolas-14:weight=normal" "Inconsolata-13:weight=normal" "Menlo-14:weight=normal"))
