@@ -2,15 +2,10 @@
 (require 'org-install)
 (require 'org-notmuch)
 (require 'org-protocol)
+(require 'org-mac-link)
 
-(when (string= system-type "windows-nt")
-    (require 'org-outlook)
-    (setq org-protocol-outlook-default-template-key "o")
-    (org-add-link-type "outlook" 'org-outlook-open)
-    (setq org-outlook-location "c:/Program Files/Microsoft Office 15/root/OFFICE15/outlook.exe"))
-
-(setq diary-file (concat mce-so-hive "org-files/diary"))
-(setq org-directory (concat mce-so-hive "org-files"))
+(setq diary-file "~/Documents/org-files/diary")
+(setq org-directory "~/Documents/org-files")
 (setq org-agenda-files (list (concat org-directory "/capture.org")
                              (concat org-directory "/biggtd.org")))
 
@@ -39,7 +34,7 @@
       '(
         ("P" "Projects"
          ((tags "PROJECT")))
-        ("W" "Work Lists"
+        ("W" "Work Lists"[[mac-outlook:102004][{Release} Semaphor 1.0.3 for Mac!]]
          ((agenda)
           (tags-todo "WORK")
           (tags-todo "COMPUTER")
@@ -65,15 +60,17 @@
               ("w" "org-protocol" entry (file (concat org-directory "/capture.org"))
                "* TODO Review %c\n%U\n  %i" :immediate-finish t)
               ("o" "org-outlook" entry (file (concat org-directory "/capture.org"))
-               "* TODO Email %c %?
-   %i
-   %U")
+               (function mce-org-get-outlook-entry))
               ("p" "Phone call" entry (file (concat org-directory "/capture.org"))
                "* PHONE %? :PHONE:\n%U"))))
 
 (setq org-link-abbrev-alist
       '(("sotrac" . "https://treehouse.spideroak.com/pandora/ticket/")
         ("sort"   . "https://treehouse.spideroak.com/rt-beta/Ticket/Display.html?id=")))
+
+(defun mce-org-get-outlook-entry ()
+  "Gets the selected Mac Outlook entry and makes a capture template around it."
+  (concat "* TODO " (org-mac-outlook-message-get-links "s") " %U\n %?"))
 
 (defun mce-org-mobpush ()
   "Runs org-mobile-push and SCP's the result to a remote server."

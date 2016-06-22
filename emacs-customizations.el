@@ -55,6 +55,11 @@
  '(notmuch-show-all-multipart/alternative-parts nil)
  '(offlineimap-command "offlineimap -u machineui")
  '(org-agenda-span 5)
+ '(org-mac-grab-Acrobat-app-p nil)
+ '(org-mac-grab-Firefox-app-p nil)
+ '(org-mac-grab-Mail-app-p nil)
+ '(org-mac-grab-Safari-app-p nil)
+ '(org-mac-grab-devonthink-app-p nil)
  '(safe-local-variable-values
    (quote
     ((virtualenv-default-directory . "~/Dev/carspeeds")
