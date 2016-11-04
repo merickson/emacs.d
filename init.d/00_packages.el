@@ -1,11 +1,14 @@
 ; Configure packages
 (setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
+      '(("org" . "http://orgmode.org/elpa/")
+        ("gnu" . "http://elpa.gnu.org/packages/")
 	("marmalade" . "https://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.milkbox.net/packages/")
-        ("org" . "http://orgmode.org/elpa/")
         ("elpy" . "https://jorgenschaefer.github.io/packages/")))
+
+
 (package-initialize)
+
 (setq mce-required-packages
       (list 'save-packages))
 (dolist (package mce-required-packages)

@@ -1,6 +1,8 @@
 ;; myui.el
 ;; How I want Emacs to look and feel. 
 
+(require 'nlinum-relative)
+
 ;; Set the color scheme
 (load-theme 'solarized-dark t)
 (set-cursor-color "green")

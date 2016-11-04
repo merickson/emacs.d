@@ -1,9 +1,17 @@
 ;;; Go customizations.
 
 (require 'go-mode)
+(require 'go-guru)
 
 ;; Make sure we run go fmt as we save.
 (add-hook 'before-save-hook 'gofmt-before-save)
+
+(add-hook 'go-mode-hook
+     (lambda ()
+              (set (make-local-variable 'company-backends) '(company-go))
+              (company-mode)))
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+(add-hook 'go-mode-hook 'nlinum-relative-mode)
 
 ;; Yay flymake!
 (add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
