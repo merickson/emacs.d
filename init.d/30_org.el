@@ -1,11 +1,11 @@
 ;; Org-mode customizations.
-(require 'org-install)
-(require 'org-notmuch)
-(require 'org-protocol)
+;(require 'org-install)
+;(require 'org-notmuch)
+;(require 'org-protocol)
 (require 'org-mac-link)
 
-(setq diary-file "~/Documents/org-files/diary")
-(setq org-directory "~/Documents/org-files")
+(setq diary-file "~/Groups Hive/org-files/diary")
+(setq org-directory "~/Groups Hive/org-files")
 (setq org-agenda-files (list (concat org-directory "/capture.org")
                              (concat org-directory "/biggtd.org")))
 
@@ -13,6 +13,7 @@
 
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/capture.org")
+(setq mce-org-completed-tasks (concat org-directory "/completed.org"))
 
 (setq org-log-done t)
 (setq org-agenda-include-diary t)
@@ -21,11 +22,12 @@
 (setq org-insert-mode-line-in-empty-file t)
 (setq org-refile-use-outline-path t)
 (setq org-use-fast-todo-selection t)
-;(org-remember-insinuate)
+(setq org-use-tag-inheritance nil)
 (setq org-default-notes-file (concat org-directory "/capture.org"))
 
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (org-agenda-files :maxlevel . 9))))
+                                 (org-agenda-files :maxlevel . 9)
+                                 (mce-org-completed-tasks :maxlevel . 9))))
 ;; Org agenda configuration.
 (setq org-agenda-show-all-dates t)
 (setq org-agenda-window-setup (quote current-window))
@@ -34,7 +36,7 @@
       '(
         ("P" "Projects"
          ((tags "PROJECT")))
-        ("W" "Work Lists"[[mac-outlook:102004][{Release} Semaphor 1.0.3 for Mac!]]
+        ("W" "Work Lists"
          ((agenda)
           (tags-todo "WORK")
           (tags-todo "COMPUTER")
@@ -57,10 +59,10 @@
                "* %? :NOTE:\n%U\n%a\n  %i")
               ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
                "* %?\n%U\n  %i")
-              ("w" "org-protocol" entry (file (concat org-directory "/capture.org"))
-               "* TODO Review %c\n%U\n  %i" :immediate-finish t)
               ("o" "org-outlook" entry (file (concat org-directory "/capture.org"))
                (function mce-org-get-outlook-entry))
+              ("C" "org-chrome" entry (file (concat org-directory "/capture.org"))
+               (function mce-org-get-chrome-entry))
               ("p" "Phone call" entry (file (concat org-directory "/capture.org"))
                "* PHONE %? :PHONE:\n%U"))))
 
@@ -70,7 +72,11 @@
 
 (defun mce-org-get-outlook-entry ()
   "Gets the selected Mac Outlook entry and makes a capture template around it."
-  (concat "* TODO " (org-mac-outlook-message-get-links "s") " %U\n %?"))
+  (concat "* TODO " (org-mac-outlook-message-get-links "s") " \n%U\n %?"))
+
+(defun mce-org-get-chrome-entry ()
+  "Gets the selected Chrome entry and makes a capture template around it."
+  (concat "* TODO " (org-mac-chrome-get-frontmost-url) " \n%U\n %?"))
 
 (defun mce-org-mobpush ()
   "Runs org-mobile-push and SCP's the result to a remote server."

@@ -35,8 +35,6 @@
 
 (add-hook 'python-mode-hook
           '(lambda ()
-             (flymake-mode)
-             (auto-complete-mode 1)
              ;; (ropemacs-mode)
              ;(define-key python-mode-map "\t" 'mce-ac-tab)
              ))

@@ -10,19 +10,7 @@
 (require 'ido)
 (ido-mode t)
 
-; Auto-complete mode
-(require 'auto-complete)
-(global-auto-complete-mode t)
-(ac-flyspell-workaround)
-
-; Yasnippet
-;(require 'yasnippet)
-;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
-;(yas/initialize)
-;(yas/load-directory (expand-file-name "snippets" mce-emacs-config-dir))
-
-(require 'auto-complete-yasnippet)
-
+(add-hook 'after-init-hook 'global-company-mode)
 
 ; Spell checking
 (setq ispell-program-name "aspell")
