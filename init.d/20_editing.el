@@ -22,3 +22,11 @@
 ;; Set the backup files to go into a specific directory.
 (setq backup-directory-alist
       (list (cons "." (expand-file-name "backup" mce-emacs-config-dir))))
+
+;; Configure tooltips for ElDoc
+(require 'pos-tip)
+(defun my-eldoc-display-message (format-string &rest args)
+  "Display eldoc message near point"
+  (when format-string
+    (pos-tip-show (apply 'format format-string args))))
+(setq eldoc-message-function #'my-eldoc-display-message)
