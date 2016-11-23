@@ -14,7 +14,7 @@
 (add-hook 'go-mode-hook 'nlinum-relative-mode)
 
 ;; Yay flymake!
-(add-to-list 'load-path (concat (getenv "GOPATH") "/src/github.com/dougm/goflymake"))
+(add-to-list 'load-path (concat (car (split-string (getenv "GOPATH") ":")) "/src/github.com/dougm/goflymake"))
 (require 'go-flymake)
 
 (defun mce-go-funcall-err-returnp ()
