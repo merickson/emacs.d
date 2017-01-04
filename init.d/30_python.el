@@ -1,7 +1,7 @@
 ;; Python customizations
 
 ;;(require 'ipython)
-(require 'flymake-python-pyflakes)
+;;(require 'flymake-python-pyflakes)
 
 ; Twisted.
 (setq auto-mode-alist (cons '("\\.tac\\'" . python-mode) auto-mode-alist))

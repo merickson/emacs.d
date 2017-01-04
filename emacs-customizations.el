@@ -62,7 +62,7 @@
  '(org-mac-grab-devonthink-app-p nil)
  '(package-selected-packages
    (quote
-    (pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
+    (flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
  '(safe-local-variable-values
    (quote
     ((virtualenv-default-directory . "~/Dev/carspeeds")

@@ -11,6 +11,7 @@
 (ido-mode t)
 
 (add-hook 'after-init-hook 'global-company-mode)
+(global-flycheck-mode)
 
 ; Spell checking
 (setq ispell-program-name "aspell")
