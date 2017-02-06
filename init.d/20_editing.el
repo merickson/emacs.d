@@ -26,8 +26,8 @@
 
 ;; Configure tooltips for ElDoc
 (require 'pos-tip)
-(defun my-eldoc-display-message (format-string &rest args)
-  "Display eldoc message near point"
-  (when format-string
-    (pos-tip-show (apply 'format format-string args))))
-(setq eldoc-message-function #'my-eldoc-display-message)
+;; (defun my-eldoc-display-message (format-string &rest args)
+;;   "Display eldoc message near point"
+;;   (when format-string
+;;     (pos-tip-show (apply 'format format-string args))))
+;; (setq eldoc-message-function #'my-eldoc-display-message)
