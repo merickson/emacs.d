@@ -3,6 +3,8 @@
 (require 'go-mode)
 (require 'go-guru)
 
+(setq gofmt-command "goimports")
+
 ;; Make sure we run go fmt as we save.
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
