@@ -74,6 +74,7 @@
 (require 'spaceline-config)
 (setq powerline-height 16)
 (spaceline-emacs-theme)
+(setq spaceline-window-numbers-unicode t)
 
 (require 'diminish)
 (diminish 'flycheck-mode)
