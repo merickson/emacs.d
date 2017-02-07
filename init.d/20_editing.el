@@ -13,6 +13,8 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (global-flycheck-mode)
 
+(yas-global-mode)
+
 ; Spell checking
 (setq ispell-program-name "aspell")
 (setq ispell-list-command "list")
@@ -26,8 +28,3 @@
 
 ;; Configure tooltips for ElDoc
 (require 'pos-tip)
-;; (defun my-eldoc-display-message (format-string &rest args)
-;;   "Display eldoc message near point"
-;;   (when format-string
-;;     (pos-tip-show (apply 'format format-string args))))
-;; (setq eldoc-message-function #'my-eldoc-display-message)
