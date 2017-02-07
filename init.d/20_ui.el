@@ -75,6 +75,7 @@
 (setq powerline-height 16)
 (spaceline-emacs-theme)
 (setq spaceline-window-numbers-unicode t)
+(setq spaceline-highlight-face-func 'spaceline-highlight-face-modified)
 
 (require 'diminish)
 (diminish 'flycheck-mode)
