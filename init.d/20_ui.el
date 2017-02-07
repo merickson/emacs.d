@@ -4,8 +4,8 @@
 (require 'nlinum-relative)
 
 ;; Set the color scheme
-(load-theme 'solarized-dark t)
-(set-cursor-color "green")
+;(load-theme 'solarized-dark t)
+;(set-cursor-color "green")
 
 ;; Code display options
 (global-font-lock-mode 1)
@@ -15,14 +15,6 @@
 (setq show-paren-style 'expression)
 (setq default-indicate-buffer-boundaries 'left)
 (setq tuncate-partial-width-windows nil)
-
-;; Modeline stuff
-(setq display-time-24hr-format t)
-(require 'spaceline-config)
-(spaceline-spacemacs-theme)
-
-(require 'diminish)
-(diminish 'flycheck-mode)
 
 ;; Only show line numbers where we want it.
 (add-hook 'mce-code-modes-hook
@@ -72,4 +64,13 @@
 (defun font-candidate (&rest fonts)
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
-(set-face-attribute 'default nil :font (font-candidate '"Consolas-14:weight=normal" "Inconsolata-13:weight=normal" "Menlo-14:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Consolas-14:weight=normal" "Inconsolata-15:weight=normal" "Menlo-16:weight=normal"))
+
+;; Modeline stuff
+(setq display-time-24hr-format t)
+(require 'spaceline-config)
+(setq powerline-height 16)
+(spaceline-emacs-theme)
+
+(require 'diminish)
+(diminish 'flycheck-mode)
