@@ -18,10 +18,12 @@
 
 ;; Modeline stuff
 (setq display-time-24hr-format t)
-(display-time-mode)
+(require 'spaceline-config)
+(spaceline-spacemacs-theme)
 
-;; Of things relating to line and column numbers.
-(column-number-mode t)
+(require 'diminish)
+(diminish 'flycheck-mode)
+
 ;; Only show line numbers where we want it.
 (add-hook 'mce-code-modes-hook
 	  (lambda () (linum-mode t)))
