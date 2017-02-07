@@ -6,6 +6,7 @@
  '(ac-trigger-key nil)
  '(ansi-color-names-vector
    ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#657b83"])
+ '(anzu-cons-mode-line-p nil)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
