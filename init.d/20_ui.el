@@ -16,9 +16,12 @@
 (setq default-indicate-buffer-boundaries 'left)
 (setq tuncate-partial-width-windows nil)
 
-;; Only show line numbers where we want it.
-(add-hook 'mce-code-modes-hook
-	  (lambda () (linum-mode t)))
+;; Configure Anzu mode.
+(global-anzu-mode)
+
+;; Winum Mode
+(setq winum-auto-setup-mode-line nil)
+(winum-mode)
 
 ;; Disable extra chrome
 (scroll-bar-mode -1)
@@ -74,3 +77,4 @@
 
 (require 'diminish)
 (diminish 'flycheck-mode)
+(diminish 'anzu-mode)

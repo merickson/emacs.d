@@ -36,7 +36,7 @@
 
 ;; F5
 (global-set-key [f5] 'compile)
-(global-set-key [(shift f5)] 'flymake-start-syntax-check)
+(global-set-key [(shift f5)] 'flycheck-buffer)
 
 ;; F6
 (global-set-key [f6] 'kmacro-start-macro)
@@ -46,23 +46,20 @@
 (global-set-key [f7] 'webjump)
 
 ;; F8
-(global-set-key [f8] 'flymake-goto-next-error)
+;;(global-set-key [f8] 'flymake-goto-next-error)
 
 ;; F9
 (global-set-key [f9] 'magit-status)
 
 ;; F10
-(global-set-key [f10] 'org-agenda)
-(global-set-key [(control f10)] 'make-remember-frame)
-(global-set-key [(shift f10)] 'org-store-link)
-(global-set-key [(meta f10)] 'org-iswitchb)
+;; (global-set-key [f10] 'org-agenda)
+;; (global-set-key [(control f10)] 'make-remember-frame)
+;; (global-set-key [(shift f10)] 'org-store-link)
+;; (global-set-key [(meta f10)] 'org-iswitchb)
 
 ;; F11
 ;;(global-set-key [f11] 'switch-to-buffer-other-window)
 
 ;;;; Aliases!
-(defalias 'qrr 'query-replace-regexp)
-(defalias 'fm 'flymake-mode)
-(defalias 'ms 'magit-status)
-(defalias 'mpull 'magit-pull)
-(defalias 'gaid 'gnus-alias-select-identity)
+(defalias 'qrr 'anzu-query-replace-regexp)
+
