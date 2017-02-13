@@ -67,7 +67,7 @@
 (defun font-candidate (&rest fonts)
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
-(set-face-attribute 'default nil :font (font-candidate '"Consolas-14:weight=normal" "Inconsolata-15:weight=normal" "Menlo-16:weight=normal"))
+(set-face-attribute 'default nil :font (font-candidate '"Consolas-12:weight=normal" "Inconsolata-15:weight=normal" "Menlo-16:weight=normal"))
 
 ;; Modeline stuff
 (setq display-time-24hr-format t)
