@@ -30,14 +30,22 @@
  '(erc-public-away-p t)
  '(erc-truncate-mode t)
  '(fci-rule-color "#073642")
+ '(gnus-alias-default-identity "work")
  '(gnus-alias-identity-alist
    (quote
-    (("SpiderMatt" "" "\"Matthew Erickson\" <matt@spideroak.com>" "SpiderOak, Inc."
-      (("Gcc" . "nnimap+SpiderOak Mail:Spideroak/Sent Messages"))
-      "-- Matt" "")
-     ("ProSpiderMatt" "SpiderMatt" "" "" nil "" "Matthew Erickson, Director of Programming")
-     ("Peawee" "" "\"Matt Erickson\" <peawee@peawee.net>" "" nil "" "-- Matt"))))
- '(gnus-alias-identity-rules nil)
+    (("work" nil "Matthew Erickson <matt@spideroak-inc.com>" nil
+      (("FCC" . "\"SpiderOak/Sent Items\" +sent -inbox -unread"))
+      nil "Matthew Erickson
+Director of Client Services and Technology, SpiderOak
++1 866-432-9888 x703")
+     ("personal" nil "Matthew Erickson <peawee@peawee.net>" nil nil nil "--Matt"))))
+ '(gnus-alias-identity-rules
+   (quote
+    (("\"work\""
+      ("to" "matt@\\\\(spideroak\\\\.com\\\\|spideroak-inc\\\\.com\\\\)" current)
+      "\"work\""))))
+ '(gnus-alias-override-user-mail-address t)
+ '(gnus-alias-unknown-identity-rule (quote default))
  '(gnus-inhibit-images nil)
  '(gnus-select-method (quote (nnmbox "/var/mail/matt")))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
@@ -68,24 +76,33 @@
  '(magit-set-upstream-on-push (quote askifnotset))
  '(markdown-command "multimarkdown")
  '(message-fill-column nil)
- '(mm-text-html-renderer (quote w3m))
+ '(message-forward-as-mime nil)
+ '(mm-inline-large-images (quote resize))
+ '(mm-text-html-renderer (quote shr))
+ '(mm-w3m-safe-url-regexp nil)
  '(notmuch-crypto-process-mime t)
+ '(notmuch-fcc-dirs
+   (quote
+    (("matt@spideroak-inc.com" . "\"SpiderOak/Sent Items\" +sent"))))
+ '(notmuch-hello-thousands-separator ",")
+ '(notmuch-identities (quote ("matt@spideroak-inc.com")))
+ '(notmuch-mua-compose-in (quote new-frame))
  '(notmuch-poll-script "")
  '(notmuch-saved-searches
    (quote
-    (("SpiderOak-Blue" . "tag:soblue")
-     ("spideroak-unread" . "folder:Spideroak/INBOX AND tag:unread AND tag:inbox")
-     ("spideroak-inbox" . "folder:Spideroak/INBOX AND tag:inbox")
-     ("inbox" . "tag:inbox")
-     ("unread" . "tag:unread")
-     ("personal-unread" . "folder:Personal/INBOX AND tag:unread AND tag:inbox")
-     ("personal-inbox" . "folder:Personal/INBOX AND tag:inbox")
-     ("flagged" . "tag:flagged")
-     ("issues" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com)")
-     ("issues-unread" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com) and tag:unread")
-     ("emacs-unread" . "tag:emacs AND tag:unread")
-     ("RecentGoToMeeting" . "GoToMeeting Invitation date:2_weeks.."))))
+    ((:name "SpiderOak-Blue" :query "tag:soblue")
+     (:name "spideroak-unread" :query "folder:SpiderOak/INBOX AND tag:unread AND tag:inbox")
+     (:name "spideroak-inbox" :query "folder:SpiderOak/INBOX AND tag:inbox")
+     (:name "inbox" :query "tag:inbox")
+     (:name "unread" :query "tag:unread")
+     (:name "personal-unread" :query "folder:Personal/INBOX AND tag:unread AND tag:inbox")
+     (:name "personal-inbox" :query "folder:Personal/INBOX AND tag:inbox")
+     (:name "flagged" :query "tag:flagged")
+     (:name "issues-unread" :query "tag:issues and tag:unread")
+     (:name "emacs-unread" :query "tag:emacs AND tag:unread")
+     (:name "RecentGoToMeeting" :query "GoToMeeting Invitation date:2_weeks.."))))
  '(notmuch-show-all-multipart/alternative-parts nil)
+ '(notmuch-show-text/html-blocked-images nil)
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
@@ -98,7 +115,7 @@
  '(org-mac-grab-devonthink-app-p nil)
  '(package-selected-packages
    (quote
-    (anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
+    (restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(safe-local-variable-values
@@ -133,6 +150,7 @@
      (340 . "#268fc6")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
+ '(w3m-default-display-inline-images t)
  '(weechat-color-list
    (quote
     (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
