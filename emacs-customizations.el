@@ -76,26 +76,6 @@ Director of Client Services and Technology, SpiderOak
  '(magit-set-upstream-on-push (quote askifnotset))
  '(markdown-command "multimarkdown")
  '(message-fill-column nil)
-<<<<<<< HEAD
- '(mm-text-html-renderer (quote w3m))
- '(notmuch-crypto-process-mime t)
- '(notmuch-poll-script "")
- '(notmuch-saved-searches
-   (quote
-    (("SpiderOak-Blue" . "tag:soblue")
-     ("spideroak-unread" . "folder:Spideroak/INBOX AND tag:unread AND tag:inbox")
-     ("spideroak-inbox" . "folder:Spideroak/INBOX AND tag:inbox")
-     ("inbox" . "tag:inbox")
-     ("unread" . "tag:unread")
-     ("personal-unread" . "folder:Personal/INBOX AND tag:unread AND tag:inbox")
-     ("personal-inbox" . "folder:Personal/INBOX AND tag:inbox")
-     ("flagged" . "tag:flagged")
-     ("issues" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com)")
-     ("issues-unread" . "(from:trac@spideroak.com or from:notifications@github.com or avg-trac@spideroak.com) and tag:unread")
-     ("emacs-unread" . "tag:emacs AND tag:unread")
-     ("RecentGoToMeeting" . "GoToMeeting Invitation date:2_weeks.."))))
- '(notmuch-show-all-multipart/alternative-parts nil)
-=======
  '(message-forward-as-mime nil)
  '(mm-inline-large-images (quote resize))
  '(mm-text-html-renderer (quote shr))
@@ -123,7 +103,6 @@ Director of Client Services and Technology, SpiderOak
      (:name "RecentGoToMeeting" :query "GoToMeeting Invitation date:2_weeks.."))))
  '(notmuch-show-all-multipart/alternative-parts nil)
  '(notmuch-show-text/html-blocked-images nil)
->>>>>>> ba670536720ef89545ca9bd6ffa35873fc52574e
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
@@ -136,11 +115,7 @@ Director of Client Services and Technology, SpiderOak
  '(org-mac-grab-devonthink-app-p nil)
  '(package-selected-packages
    (quote
-<<<<<<< HEAD
-    (anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
-=======
-    (restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
->>>>>>> ba670536720ef89545ca9bd6ffa35873fc52574e
+    (f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(safe-local-variable-values
@@ -175,10 +150,7 @@ Director of Client Services and Technology, SpiderOak
      (340 . "#268fc6")
      (360 . "#268bd2"))))
  '(vc-annotate-very-old-color nil)
-<<<<<<< HEAD
-=======
  '(w3m-default-display-inline-images t)
->>>>>>> ba670536720ef89545ca9bd6ffa35873fc52574e
  '(weechat-color-list
    (quote
     (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))

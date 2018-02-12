@@ -22,11 +22,11 @@
 
 (add-hook 'message-setup-hook 'gnus-alias-determine-identity)
 
-(require 'notmuch)
-(define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
-(define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
-
-(setq notmuch-multipart/alternative-discouraged '("text/plain" "multipart/related"))
+(if (not (require 'notmuch nil t))
+    (message "notmuch not found")
+  (define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
+  (define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
+  (setq notmuch-multipart/alternative-discouraged '("text/plain" "multipart/related")))
 
 ;; Check notmuch for new email.
 (setq mce-newmail-searches '("spideroak-unread"))
