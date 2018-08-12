@@ -26,7 +26,8 @@
     (message "notmuch not found")
   (define-key notmuch-show-mode-map "d" 'my-notmuch-show-delete)
   (define-key notmuch-search-mode-map "d" 'my-notmuch-search-delete)
-  (setq notmuch-multipart/alternative-discouraged '("text/plain" "multipart/related")))
+  (setq notmuch-multipart/alternative-discouraged '("text/plain" "multipart/related"))
+  (setq display-time-mail-function 'mce-check-new-email))
 
 ;; Check notmuch for new email.
 (setq mce-newmail-searches '("spideroak-unread"))
@@ -46,8 +47,6 @@
       (reduce '+
               (mapcar (lambda (x) (car (last x)))
                       (notmuch-hello-query-counts (mce-filter-search-list))))))
-
-(setq display-time-mail-function 'mce-check-new-email)
 
 ;; Make sure newly sent mail properly gets its buffer killed.
 (setq message-kill-buffer-on-exit t)
