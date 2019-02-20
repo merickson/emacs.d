@@ -16,8 +16,11 @@
 (yas-global-mode)
 
 ; Spell checking
-(setq ispell-program-name "aspell")
-(setq ispell-list-command "list")
+(if (string= system-type "windows-nt")
+    (setq ispell-local-dictionary-alist (quote ((nil "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8))))
+  (progn
+    (setq ispell-program-name "aspell")
+    (setq ispell-list-command "list")))
 
 ; TRAMP configuration
 (setq tramp-default-method "ssh")

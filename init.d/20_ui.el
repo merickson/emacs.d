@@ -80,3 +80,5 @@
 (require 'diminish)
 (diminish 'flycheck-mode)
 (diminish 'anzu-mode)
+(diminish 'flymake-mode)
+
