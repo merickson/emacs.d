@@ -113,9 +113,10 @@ Director of Client Services and Technology, SpiderOak
  '(org-mac-grab-Mail-app-p nil)
  '(org-mac-grab-Safari-app-p nil)
  '(org-mac-grab-devonthink-app-p nil)
+ '(org-protocol-outlook-default-template-key (quote o))
  '(package-selected-packages
    (quote
-    (rw-hunspell apiwrap ghub+ ghub epl pkg-info powerline f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
+    (org-outlook powershell rw-hunspell apiwrap ghub+ ghub epl pkg-info powerline f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(safe-local-variable-values

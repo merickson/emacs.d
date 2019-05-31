@@ -7,6 +7,9 @@
 (setq auto-mode-alist (cons '("\\.tac\\'" . python-mode) auto-mode-alist))
 
 (elpy-enable)
+;; (when (load "flycheck" t t)
+;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;;;; Pymacs customizations
 ;; (autoload 'pymacs-apply "pymacs")
