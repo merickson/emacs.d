@@ -112,6 +112,14 @@
   (org-capture)
   (delete-other-windows))
 
+;;; Make sure excorporate updates every time my agenda refreshes.
+(excorporate)
+(excorporate-diary-enable)
+(defun mce/agenda-update-diary ()
+  "call excorporate to update the diary for today"
+  (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated"))
+
+(add-hook 'org-agenda-cleanup-fancy-diary-hook 'mce/agenda-update-diary)
 ;;; Desktop notifications
  
 (require 'appt)
