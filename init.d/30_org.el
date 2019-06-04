@@ -16,21 +16,27 @@
 (setq mce-org-completed-tasks (concat org-directory "completed.org"))
 
 (setq org-log-done t)
-(setq org-agenda-include-diary t)
-(setq org-deadline-warning-days 7)
-(setq org-timeline-show-empty-dates t)
 (setq org-insert-mode-line-in-empty-file t)
-(setq org-refile-use-outline-path t)
 (setq org-use-fast-todo-selection t)
-(setq org-use-tag-inheritance nil)
-(setq org-default-notes-file (concat org-directory "capture.org"))
 
+;;; Tag configuration
+(setq org-use-tag-inheritance t)
+(setq org-tags-exclude-from-inheritance '("PROJECT" "SALE"))
+
+;;; Capture / refile configuration
+(setq org-refile-use-outline-path t)
+(setq org-default-notes-file (concat org-directory "capture.org"))
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9)
                                  (mce-org-completed-tasks :maxlevel . 9))))
-;; Org agenda configuration.
+
+;;; Org agenda configuration.
 (setq org-agenda-show-all-dates t)
 (setq org-agenda-window-setup (quote current-window))
+
+(setq org-agenda-include-diary t)
+(setq org-deadline-warning-days 3)
+(setq org-timeline-show-empty-dates t)
 
 (setq org-agenda-custom-commands
       '(
@@ -38,9 +44,10 @@
          ((tags "PROJECT")))
         ("W" "Work Lists"
          ((agenda)
-          (tags-todo "WORK")
-          (tags-todo "COMPUTER")
-          (tags-todo "READING")))
+          (tags-todo "@computer")
+          (tags-todo "@messaging")
+          (tags-todo "@phone")
+          (tags-todo "WORK-PROJECT-SALE")))
         ("D" "Daily Action List"
          ((agenda "" ((org-agenda-ndays 1)
                       (org-agenda-sorting-strategy
@@ -61,18 +68,16 @@
                "* %?\n%U\n  %i")
               ("o" "org-outlook" entry (file "capture.org")
                "* TODO Email %c %? %i %u")
+              ("L" "Protocol Link" entry (file "capture.org")
+               "* %? [[%:link][%:description]] \nCaptured On: %U")
               ("C" "org-chrome" entry (file "capture.org")
                (function mce-org-get-chrome-entry))
               ("p" "Phone call" entry (file "capture.org")
                "* PHONE %? :PHONE:\n%U"))))
 
-
-(setq org-link-abbrev-alist
-      '(("sotrac" . "https://treehouse.spideroak.com/pandora/ticket/")
-        ("sort"   . "https://treehouse.spideroak.com/rt-beta/Ticket/Display.html?id=")))
-
 (setq excorporate-configuration '("matt@spideroak-inc.com" . "https://outlook.office365.com/EWS/Exchange.asmx"))
 
+;;; Mac-org configuration
 (defun mce-org-get-outlook-entry ()
   "Gets the selected Mac Outlook entry and makes a capture template around it."
   (concat "* TODO " (org-mac-outlook-message-get-links "s") " \n%U\n %?"))
@@ -80,19 +85,6 @@
 (defun mce-org-get-chrome-entry ()
   "Gets the selected Chrome entry and makes a capture template around it."
   (concat "* TODO " (org-mac-chrome-get-frontmost-url) " \n%U\n %?"))
-
-(defun mce-org-mobpush ()
-  "Runs org-mobile-push and SCP's the result to a remote server."
-  (interactive)
-  (org-mobile-push)
-  (let
-      ((localpush
-        (convert-standard-filename 
-         (substitute-in-file-name (expand-file-name org-mobile-directory))))
-       (remotepush mce-org-mobpush-remote))
-    (call-process
-     (substitute-in-file-name mce-org-mobpush-tool)
-     nil "*mce-org-mobpush*" nil "-r" localpush remotepush)))
 
 (defadvice org-capture-finalize (after delete-remember-frame activate)
   "Advise remember-finalize to close the frame if it is the remember frame"
@@ -113,15 +105,17 @@
   (delete-other-windows))
 
 ;;; Make sure excorporate updates every time my agenda refreshes.
+;; (defun mce/agenda-update-diary ()
+;;   "call excorporate to update the diary for today"
+;;   (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated"))
+
 (excorporate)
 (excorporate-diary-enable)
-(defun mce/agenda-update-diary ()
-  "call excorporate to update the diary for today"
-  (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated"))
 
-(add-hook 'org-agenda-cleanup-fancy-diary-hook 'mce/agenda-update-diary)
-;;; Desktop notifications
- 
+;(add-hook 'org-agenda-cleanup-fancy-diary-hook 'mce/agenda-update-diary)
+
+
+;;; Desktop notifications 
 (require 'appt)
 (setq appt-time-msg-list nil)
 (setq appt-display-interval '5)
