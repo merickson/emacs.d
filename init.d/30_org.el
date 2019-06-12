@@ -11,13 +11,27 @@
   (setq org-directory "~/Dropbox/OrgFiles/"))
 (setq diary-file (concat org-directory "diary"))
 (setq org-agenda-files (list (concat org-directory "capture.org")
-                             (concat org-directory "biggtd.org")))
+                             (concat org-directory "Spideroak.org")
+                             (concat org-directory "Aricorn.org")
+                             (concat org-directory "DPA.org")
+                             (concat org-directory "Personal.org")))
+
+;;; Autosavery
+;; The goal is to stay in sync with whatever's in the org-files directory.
+;; To do that, we are going to do two things:
+;; 1. Enable auto-revert mode to pick up changes from mobile ASAP
+;; 2. Automatically save org buffers whenever a buffer is left or Emacs loses
+;;    focus.
+(add-hook 'org-mode-hook 'auto-revert-mode)
+(add-hook 'focus-out-hook (lambda () (save-buffers-with-major-mode 'org-mode)))
+
 
 (setq mce-org-completed-tasks (concat org-directory "completed.org"))
 
 (setq org-log-done t)
 (setq org-insert-mode-line-in-empty-file t)
 (setq org-use-fast-todo-selection t)
+(setq org-enforce-todo-dependencies t)
 
 ;;; Tag configuration
 (setq org-use-tag-inheritance t)
@@ -33,6 +47,7 @@
 ;;; Org agenda configuration.
 (setq org-agenda-show-all-dates t)
 (setq org-agenda-window-setup (quote current-window))
+(setq org-agenda-dim-blocked-tasks t)
 
 (setq org-agenda-include-diary t)
 (setq org-deadline-warning-days 3)
