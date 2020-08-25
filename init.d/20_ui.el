@@ -4,8 +4,8 @@
 (require 'nlinum-relative)
 
 ;; Set the color scheme
-;(load-theme 'solarized-dark t)
-;(set-cursor-color "green")
+(load-theme 'spacemacs-light t)
+(set-cursor-color "green")
 
 ;; Code display options
 (global-font-lock-mode 1)

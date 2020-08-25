@@ -74,6 +74,8 @@
 ;; Org capture templates
 (setq org-capture-templates
       (quote (("t" "todo" entry (file "capture.org")
+               "* TODO %?\n%U\n  %i")
+              ("p" "todo at point" entry (file "capture.org")
                "* TODO %?\n%U\n%a\n  %i")
               ("c" "calendar" entry (file "capture.org")
                "* %?  %i")
@@ -82,13 +84,11 @@
               ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
                "* %?\n%U\n  %i")
               ("o" "org-outlook" entry (file "capture.org")
-               "* TODO Email %c %? %i %u")
+               "* TODO %?\n%i\n%U\n%c")
               ("L" "Protocol Link" entry (file "capture.org")
                "* %? [[%:link][%:description]] \nCaptured On: %U")
               ("C" "org-chrome" entry (file "capture.org")
-               (function mce-org-get-chrome-entry))
-              ("p" "Phone call" entry (file "capture.org")
-               "* PHONE %? :PHONE:\n%U"))))
+               (function mce-org-get-chrome-entry)))))
 
 (setq excorporate-configuration '("matt@spideroak-inc.com" . "https://outlook.office365.com/EWS/Exchange.asmx"))
 
@@ -124,8 +124,8 @@
 ;;   "call excorporate to update the diary for today"
 ;;   (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated"))
 
-(excorporate)
-(excorporate-diary-enable)
+;(excorporate)
+;(excorporate-diary-enable)
 
 ;(add-hook 'org-agenda-cleanup-fancy-diary-hook 'mce/agenda-update-diary)
 

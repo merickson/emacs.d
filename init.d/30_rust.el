@@ -11,7 +11,6 @@
 
                                         ; Configure racer
 (setq racer-cmd "~/.cargo/bin/racer")
-(setq racer-rust-src-path "~/git/rust/src")
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
