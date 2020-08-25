@@ -29,7 +29,7 @@
 
 ; Global highlight mode
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "grey15")
+(set-face-background 'hl-line "grey95")
 
 ;; Compilation-mode
 ; Tell compile mode to always follow the bottom of the compile.
