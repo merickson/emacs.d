@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ac-trigger-key nil)
  '(ansi-color-names-vector
-   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#657b83"])
+   ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
  '(anzu-cons-mode-line-p nil)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
@@ -108,6 +108,9 @@ Director of Client Services and Technology, SpiderOak
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(offlineimap-command "offlineimap -u machineui")
+ '(org-agenda-files
+   (quote
+    ("C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\capture.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Spideroak.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Aricorn.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Personal.org")))
  '(org-agenda-span 5)
  '(org-mac-grab-Acrobat-app-p nil)
  '(org-mac-grab-Firefox-app-p nil)
@@ -117,7 +120,7 @@ Director of Client Services and Technology, SpiderOak
  '(org-protocol-outlook-default-template-key (quote o))
  '(package-selected-packages
    (quote
-    (org-outlook powershell rw-hunspell apiwrap ghub+ ghub epl pkg-info powerline f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
+    (org org-outlook powershell rw-hunspell apiwrap ghub+ ghub epl pkg-info powerline f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(safe-local-variable-values

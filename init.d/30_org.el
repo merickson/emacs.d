@@ -13,7 +13,6 @@
 (setq org-agenda-files (list (concat org-directory "capture.org")
                              (concat org-directory "Spideroak.org")
                              (concat org-directory "Aricorn.org")
-                             (concat org-directory "DPA.org")
                              (concat org-directory "Personal.org")))
 
 ;;; Autosavery
@@ -90,7 +89,7 @@
               ("C" "org-chrome" entry (file "capture.org")
                (function mce-org-get-chrome-entry)))))
 
-(setq excorporate-configuration '("matt@spideroak-inc.com" . "https://outlook.office365.com/EWS/Exchange.asmx"))
+(setq excorporate-configuration '(("matt@spideroak-inc.com" . "https://outlook.office365.com/EWS/Exchange.asmx") . ("merickson@spideroak-ms.com" . "https://outlook.office365.com/EWS/Exchange.asmx")))
 
 ;;; Mac-org configuration
 (defun mce-org-get-outlook-entry ()
