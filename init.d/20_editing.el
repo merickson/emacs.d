@@ -31,3 +31,8 @@
 
 ;; Configure tooltips for ElDoc
 (require 'pos-tip)
+
+;; Disable disabling some commands.
+(put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

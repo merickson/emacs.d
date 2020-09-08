@@ -35,6 +35,3 @@
     (dolist (file (directory-files mce-emacs-init-dir t "\\.el$"))
       (load file)))
 
-
-(put 'narrow-to-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
