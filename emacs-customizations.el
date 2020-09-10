@@ -108,9 +108,6 @@ Director of Client Services and Technology, SpiderOak
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(offlineimap-command "offlineimap -u machineui")
- '(org-agenda-files
-   (quote
-    ("C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\capture.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Spideroak.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Aricorn.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Personal.org")))
  '(org-agenda-span 5)
  '(org-mac-grab-Acrobat-app-p nil)
  '(org-mac-grab-Firefox-app-p nil)
