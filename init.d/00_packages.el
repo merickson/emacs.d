@@ -7,7 +7,7 @@
         ("elpy" . "https://jorgenschaefer.github.io/packages/")))
 
 
-(package-initialize)
+(when (version< emacs-version "27.0") (package-initialize))
 
 (setq mce-required-packages
       (list 'save-packages))
