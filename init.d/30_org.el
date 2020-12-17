@@ -3,17 +3,19 @@
 ;(require 'org-notmuch)
 (require 'org-protocol)
 (require 'org-mac-link)
-(require 'org-outlook)
+(when (eq system-type 'nt)
+  (require 'org-outlook))
 
 ;; Set the file structure properly based on OS.
 (if (string-equal system-type "windows-nt")
     (setq org-directory (concat (getenv "HOME") "\\Dropbox\\OrgFiles\\"))
   (setq org-directory "~/Dropbox/OrgFiles/"))
 (setq diary-file (concat org-directory "diary"))
-(setq org-agenda-files (list (concat org-directory "capture.org")
+(if (file-directory-p org-directory)
+    (setq org-agenda-files (list (concat org-directory "capture.org")
                              (concat org-directory "Spideroak.org")
                              (concat org-directory "Aricorn.org")
-                             (concat org-directory "Personal.org")))
+                             (concat org-directory "Personal.org"))))
 
 ;;; Autosavery
 ;; The goal is to stay in sync with whatever's in the org-files directory.
