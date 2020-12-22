@@ -94,6 +94,8 @@ Director of Client Services and Technology, SpiderOak
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4"))
  '(offlineimap-command "offlineimap -u machineui")
+ '(org-agenda-files
+   '("C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\capture.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Spideroak.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Aricorn.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Personal.org"))
  '(org-agenda-span 5)
  '(org-mac-grab-Acrobat-app-p nil)
  '(org-mac-grab-Firefox-app-p nil)
@@ -102,7 +104,7 @@ Director of Client Services and Technology, SpiderOak
  '(org-mac-grab-devonthink-app-p nil)
  '(org-protocol-outlook-default-template-key 'o)
  '(package-selected-packages
-   '(olivetti mermaid-mode ob-mermaid org-noter pdf-tools c-eldoc irony-eldoc irony company-emoji company-irony company-irony-c-headers flycheck-irony platformio-mode org org-outlook powershell rw-hunspell apiwrap ghub+ ghub epl pkg-info powerline f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game))
+   '(olivetti mermaid-mode ob-mermaid org-noter pdf-tools c-eldoc irony-eldoc irony company-emoji company-irony company-irony-c-headers flycheck-irony platformio-mode wanderlust org org-outlook powershell rw-hunspell apiwrap ghub+ ghub epl pkg-info powerline f restclient org-mime gnus-alias racer cargo flycheck-rust rust-mode fish-mode anzu winum spacemacs-theme diminish spaceline go-snippets dockerfile-mode flycheck async company dash find-file-in-project flymake-easy fsm gh git-commit highlight-indentation ht ivy logito marshal nlinum pcache pyvenv s url-http-ntlm with-editor yasnippet flycheck-status-emoji flycheck-pos-tip flycheck-color-mode-line flycheck-gometalinter objc-font-lock pos-tip irfc magit magit-filenotify magit-gh-pulls magit-popup magithub company-go go-eldoc go-errcheck applescript-mode go-guru nlinum-relative znc yaml-mode xml-rpc w3m todochiku solarized-theme save-packages rainbow-mode pymacs org-plus-contrib org-magit org-mac-link ntcmd nodejs-repl nginx-mode markdown-mode lorem-ipsum js2-mode ipython go-mode gist flymake-python-pyflakes flymake-go exec-path-from-shell excorporate ercn erc-hl-nicks elpy android-mode 2048-game))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(safe-local-variable-values
@@ -158,4 +160,7 @@ Director of Client Services and Technology, SpiderOak
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "outline" :family "Source Code Pro"))))
+ '(org-default ((t (:inherit default))))
+ '(org-level-1 ((t (:inherit (bold org-default) :extend nil :foreground "#268bd2" :weight bold :height 1.3))))
+ '(variable-pitch ((t (:foundry "outline" :family "Source Sans Pro")))))

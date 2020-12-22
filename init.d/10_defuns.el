@@ -64,4 +64,3 @@
               (set-buffer (car this))
               (save-buffer)))))))
 
-(save-buffers-with-major-mode 'org-mode)

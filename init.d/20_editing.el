@@ -16,11 +16,15 @@
 (yas-global-mode)
 
 ; Spell checking
-(if (string= system-type "windows-nt")
-    (setq ispell-local-dictionary-alist (quote ((nil "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8))))
-  (progn
-    (setq ispell-program-name "aspell")
-    (setq ispell-list-command "list")))
+(cond
+ ((executable-find "hunspell")
+  (setq ispell-program-name "hunspell")
+  (setq ispell-local-dictionary "en_US")
+  (setq ispell-local-dictionary-alist (quote ((nil "[[:alpha:]]" "[^[:alpha:]]" "[']" t ("-d" "en_US") nil utf-8)))))
+ ((executable-find "aspell")
+  (setq ispell-program-name "aspell")
+  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US"))
+  (setq ispell-list-command "list")))
 
 ; TRAMP configuration
 (setq tramp-default-method "ssh")
