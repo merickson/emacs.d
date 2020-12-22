@@ -19,13 +19,14 @@
 
 ;;; Autosavery
 ;; The goal is to stay in sync with whatever's in the org-files directory.
-;; To do that, we are going to do two things:
+;; To do that, we are going to do three things:
 ;; 1. Enable auto-revert mode to pick up changes from mobile ASAP
 ;; 2. Automatically save org buffers whenever a buffer is left or Emacs loses
 ;;    focus.
+;; 3. Include org files in the auto-save-hook mechanism.
 (add-hook 'org-mode-hook 'auto-revert-mode)
 (add-hook 'focus-out-hook (lambda () (save-buffers-with-major-mode 'org-mode)))
-
+(add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
 (setq mce-org-completed-tasks (concat org-directory "completed.org"))
 
