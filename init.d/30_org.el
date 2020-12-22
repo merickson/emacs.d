@@ -74,42 +74,58 @@
         ))
 
 ;; Org capture templates
-(setq org-capture-templates
-      (quote (("t" "todo" entry (file "capture.org")
-               "* TODO %?\n%U\n  %i")
-              ("p" "todo at point" entry (file "capture.org")
-               "* TODO %?\n%U\n%a\n  %i")
-              ("c" "calendar" entry (file "capture.org")
-               "* %?  %i")
-              ("n" "note" entry (file "capture.org")
-               "* %? :NOTE:\n%U\n%a\n  %i")
-              ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-               "* %?\n%U\n  %i")
-              ("o" "org-outlook" entry (file "capture.org")
-               "* TODO %?\n%i\n%U\n%c")
-              ("L" "Protocol Link" entry (file "capture.org")
-               "* %? [[%:link][%:description]] \nCaptured On: %U")
-              ("C" "org-chrome" entry (file "capture.org")
-               (function mce-org-get-chrome-entry)))))
+;; Define a base, and append system-specific capture templates to it.
+(setq mce-org-basic-templates
+      '(("t" "todo" entry (file "capture.org")
+         "* TODO %?\n%U\n  %i")
+        ("p" "todo at point" entry (file "capture.org")
+         "* TODO %?\n%U\n%a\n  %i")
+        ("c" "calendar" entry (file "capture.org")
+         "* %?  %i")
+        ("n" "note" entry (file "capture.org")
+         "* %? :NOTE:\n%U\n%a\n  %i")
+        ("L" "Protocol Link" entry (file "capture.org")
+         "* %? [[%:link][%:description]] \nCaptured On: %U"))
+      mce-org-nt-templates
+      '(("o" "Outlook" entry (file "capture.org")
+         "* TODO %?\n%i\n%U\n%c"))
+      mce-org-darwin-templates
+      '(("S" "Safari" entry (file "capture.org")
+         (function mce-org-get-safari-entry))
+        ("C" "Chrome" entry (file "capture.org")
+         (function mce-org-get-chrome-entry))))
 
-(setq excorporate-configuration '(("matt@spideroak-inc.com" . "https://outlook.office365.com/EWS/Exchange.asmx") . ("merickson@spideroak-ms.com" . "https://outlook.office365.com/EWS/Exchange.asmx")))
+(setq org-capture-templates
+      (cond
+       ((string-equal system-type "windows-nt")
+        (append mce-org-basic-templates mce-org-nt-templates))
+       ((string-equal system-type "darwin")
+        (append mce-org-basic-templates mce-org-darwin-templates))))
 
 ;;; Mac-org configuration
 (defun mce-org-get-outlook-entry ()
-  "Gets the selected Mac Outlook entry and makes a capture template around it."
+  "Gets the selected Mac Outlook entry and make a capture template around it."
   (concat "* TODO " (org-mac-outlook-message-get-links "s") " \n%U\n %?"))
 
 (defun mce-org-get-chrome-entry ()
-  "Gets the selected Chrome entry and makes a capture template around it."
-  (concat "* TODO " (org-mac-chrome-get-frontmost-url) " \n%U\n %?"))
+  "Gets the selected Chrome entry and make a capture template around it."
+  (concat "* TODO Web: " (org-mac-chrome-get-frontmost-url) " \n%U\n %?"))
+
+(defun mce-org-get-safari-entry ()
+  "Gets the selected Safari entry and make a capture template around it."
+  (concat "* TODO Web: " (org-mac-safari-get-frontmost-url) " \n%U\n %?"))
+
+(defun mce-org-get-link ()
+  "Asks org-mac-link for something."
+  (concat "* TODO " (org-mac-grab-link) " \n%U\n %?"))
 
 (defadvice org-capture-finalize (after delete-remember-frame activate)
-  "Advise remember-finalize to close the frame if it is the remember frame"
+  "Advise remember-finalize to close the frame if it is the remember frame."
   (if (equal "Org-Capture" (frame-parameter nil 'name))
       (delete-frame)))
 
 (defadvice org-capture-destroy (after delete-remember-frame activate)
-  "Advise remember-destroy to close the frame if it is the rememeber frame"
+  "Advise remember-destroy to close the frame if it is the rememeber frame."
   (if (equal "Org-Capture" (frame-parameter nil 'name))
       (delete-frame)))
 

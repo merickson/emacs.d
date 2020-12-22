@@ -96,9 +96,11 @@ Director of Client Services and Technology, SpiderOak
  '(offlineimap-command "offlineimap -u machineui")
  '(org-agenda-span 5)
  '(org-mac-grab-Acrobat-app-p nil)
+ '(org-mac-grab-Brave-app-p nil)
  '(org-mac-grab-Firefox-app-p nil)
- '(org-mac-grab-Mail-app-p nil)
- '(org-mac-grab-Safari-app-p nil)
+ '(org-mac-grab-Mail-app-p t)
+ '(org-mac-grab-Outlook-app-p nil)
+ '(org-mac-grab-Safari-app-p t)
  '(org-mac-grab-devonthink-app-p nil)
  '(org-protocol-outlook-default-template-key 'o)
  '(package-selected-packages
@@ -155,3 +157,9 @@ Director of Client Services and Technology, SpiderOak
 ;;  '(mode-line-inactive ((t (:inherit mode-line :inverse-video t :box nil)))))
 
 ;;; emacs-customizations.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
