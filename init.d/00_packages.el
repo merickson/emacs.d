@@ -2,7 +2,6 @@
 (setq package-archives
       '(("org" . "http://orgmode.org/elpa/")
         ("gnu" . "http://elpa.gnu.org/packages/")
-	("marmalade" . "https://marmalade-repo.org/packages/")
         ("melpa" . "http://melpa.org/packages/")
         ("elpy" . "https://jorgenschaefer.github.io/packages/")))
 
