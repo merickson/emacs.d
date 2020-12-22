@@ -8,7 +8,9 @@
 ;; You may delete these explanatory comments.
 (when (version< emacs-version "27.0") (package-initialize))
 
-(require 'cl)
+(if (version< emacs-version "27.0")
+    (require 'cl)
+  (require 'cl-lib))
 (require 'eieio) ; for gh.el
 (require 'netrc)
 (server-start)

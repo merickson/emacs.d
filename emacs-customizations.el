@@ -94,8 +94,6 @@ Director of Client Services and Technology, SpiderOak
  '(nrepl-message-colors
    '("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4"))
  '(offlineimap-command "offlineimap -u machineui")
- '(org-agenda-files
-   '("C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\capture.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Spideroak.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Aricorn.org" "C:\\Users\\Matthew Erickson\\Dropbox\\OrgFiles\\Personal.org"))
  '(org-agenda-span 5)
  '(org-mac-grab-Acrobat-app-p nil)
  '(org-mac-grab-Firefox-app-p nil)
@@ -155,12 +153,5 @@ Director of Client Services and Technology, SpiderOak
 ;;  '(mode-line-emphasis ((t (:inherit mode-line :weight bold))))
 ;;  '(mode-line-highlight ((t (:inherit mode-line :box (:line-width 2 :color "grey40" :style released-button)))))
 ;;  '(mode-line-inactive ((t (:inherit mode-line :inverse-video t :box nil)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "outline" :family "Source Code Pro"))))
- '(org-default ((t (:inherit default))))
- '(org-level-1 ((t (:inherit (bold org-default) :extend nil :foreground "#268bd2" :weight bold :height 1.3))))
- '(variable-pitch ((t (:foundry "outline" :family "Source Sans Pro")))))
+
+;;; emacs-customizations.el ends here
