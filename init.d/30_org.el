@@ -182,3 +182,6 @@
 
 ;; org-roam configuration
 (add-hook 'after-init-hook 'org-roam-mode)
+
+;; Face customization
+(set-face-attribute 'org-code nil :inherit 'default :foreground "#28def0" :font (font-candidate '"Source Code Pro-14" "Consolas-14" "Inconsolata-14" "Menlo-14"))
