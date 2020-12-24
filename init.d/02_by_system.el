@@ -7,8 +7,9 @@
 
 (if (string= system-type "windows-nt")
     (progn (setq mce-so-hive "~/Documents/SpiderOak Hive/")
-	   (setq tramp-default-method "plink"))
-  (setq mce-so-hive "~/SpiderOak Hive/"))
+	   (setq mce-dropbox (concat (getenv "USERPROFILE") "/Dropbox/")))
+  (progn (setq mce-so-hive "~/SpiderOak Hive/")
+         (setq mce-dropbox "~/Dropbox/")))
 
 (if (string= system-type "darwin")
     (progn (setenv "PATH"
