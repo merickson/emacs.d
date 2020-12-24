@@ -11,8 +11,8 @@
     (setq org-directory (concat (getenv "HOME") "\\Dropbox\\OrgFiles\\"))
   (setq org-directory "~/Dropbox/OrgFiles/"))
 
-(setq org-directory (concat mce-dropbox "OrgFiles"))
-(setq org-roam-directory (concat mce-dropbox "OrgRoam"))
+(setq org-directory (concat mce-dropbox "OrgFiles/"))
+(setq org-roam-directory (concat mce-dropbox "OrgRoam/"))
 (setq diary-file (concat org-directory "diary"))
 (if (file-directory-p org-directory)
     (setq org-agenda-files (list (concat org-directory "capture.org")
@@ -29,7 +29,7 @@
 ;;    focus.
 ;; 3. Include org files in the auto-save-hook mechanism.
 (add-hook 'org-mode-hook 'auto-revert-mode)
-(add-hook 'focus-out-hook (lambda () (save-buffers-with-major-mode 'org-mode)))
+(add-hook 'focus-out-hook 'org-save-all-org-buffers)
 (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
 (setq mce-org-completed-tasks (concat org-directory "completed.org"))
@@ -178,3 +178,7 @@
      (format "Appointment in %s minutes" min-to-app)
      (format "%s" msg)))
   (setq appt-disp-window-function (function toast-appt-display)))
+
+
+;; org-roam configuration
+(add-hook 'after-init-hook 'org-roam-mode)
