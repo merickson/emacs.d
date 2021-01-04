@@ -46,7 +46,7 @@
 (global-set-key [f7] 'webjump)
 
 ;; F8
-;;(global-set-key [f8] 'flymake-goto-next-error)
+(define-key lsp-mode-map [f8] lsp-command-map)
 
 ;; F9
 (global-set-key [f9] 'magit-status)

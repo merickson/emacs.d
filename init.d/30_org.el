@@ -2,15 +2,12 @@
 (require 'org-install)
 ;(require 'org-notmuch)
 (require 'org-protocol)
-(require 'org-mac-link)
+(when (eq system-type 'darwin)
+  (require 'org-mac-link))
 (when (eq system-type 'nt)
   (require 'org-outlook))
 
-;; Set the file structure properly based on OS.
-(if (string-equal system-type "windows-nt")
-    (setq org-directory (concat (getenv "HOME") "\\Dropbox\\OrgFiles\\"))
-  (setq org-directory "~/Dropbox/OrgFiles/"))
-
+;; Configure directory structure.
 (setq org-directory (concat mce-dropbox "OrgFiles/"))
 (setq org-roam-directory (concat mce-dropbox "OrgRoam/"))
 (setq diary-file (concat org-directory "diary"))
@@ -21,6 +18,8 @@
                              (concat org-directory "Personal.org"))))
 
 
+;; Long-form text needs visual-line-mode.
+(add-hook 'org-mode-hook 'visual-line-mode)
 ;;; Autosavery
 ;; The goal is to stay in sync with whatever's in the org-files directory.
 ;; To do that, we are going to do three things:
