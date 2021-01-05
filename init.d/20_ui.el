@@ -64,13 +64,32 @@
         (set-cursor-color "red"))
     (set-cursor-color th--default-cursor-color)))
 
-(defun font-candidate (&rest fonts)
-  "Find an installed font from the list of candidates"
+;;; Font management
+;; Functions to make finding fonts fast and fun
+(defun font-candidate (fonts)
+  "Find an installed font from the list of candidates."
   (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
+(setq mce-default-font-list '("Source Code Pro" "Consolas" "Inconsolata" "Menlo"))
+(setq mce-variable-font-list '("Source Sans Pro" "Helvetica" "Segoe UI" "Arial"))
+
+;; Windows renders fonts bigger than Mac, thus the fun.
+(defun mce-make-font-candidates (size flist)
+  "Formats a list of candidates to work with font-candidate from SIZE and FLIST."
+  (when flist
+    (cons (concat (car flist) "-" size)
+          (mce-make-font-candidates size (cdr flist)))))
+
+
 ;; Face configuration
-(set-face-attribute 'default nil :font (font-candidate '"Source Code Pro-14" "Consolas-14" "Inconsolata-14" "Menlo-14"))
-(set-face-attribute 'variable-pitch nil :font (font-candidate '"Source Sans Pro-14" "Helvetica-14" "Segoe UI-14" "Arial-14"))
+(set-face-attribute 'default nil :font
+                    (font-candidate
+                     (mce-make-font-candidates
+                      mce-font-size mce-default-font-list)))
+(set-face-attribute 'variable-pitch nil :font
+                    (font-candidate
+                     (mce-make-font-candidates
+                      mce-font-size mce-variable-font-list)))
 
 ;; Modeline stuff
 (setq display-time-24hr-format t)
@@ -84,4 +103,3 @@
 (diminish 'flycheck-mode)
 (diminish 'anzu-mode)
 (diminish 'flymake-mode)
-
