@@ -34,6 +34,7 @@
 (setq mce-org-completed-tasks (concat org-directory "completed.org"))
 
 (setq org-log-done t)
+(setq org-log-into-drawer "LOGBOOK")
 (setq org-insert-mode-line-in-empty-file t)
 (setq org-use-fast-todo-selection t)
 (setq org-enforce-todo-dependencies t)
@@ -183,4 +184,7 @@
 (add-hook 'after-init-hook 'org-roam-mode)
 
 ;; Face customization
-(set-face-attribute 'org-code nil :inherit 'default :foreground "#28def0" :font (font-candidate '"Source Code Pro-14" "Consolas-14" "Inconsolata-14" "Menlo-14"))
+(set-face-attribute 'org-code nil :inherit 'default :foreground "#28def0" :font
+                    (font-candidate
+                     (mce-make-font-candidates
+                      mce-font-size mce-default-font-list)))
