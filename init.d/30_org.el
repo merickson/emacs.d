@@ -45,6 +45,7 @@
 
 ;;; Capture / refile configuration
 (setq org-refile-use-outline-path t)
+(setq org-outline-path-complete-in-steps nil)
 (setq org-default-notes-file (concat org-directory "capture.org"))
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9)
@@ -88,10 +89,12 @@
          "* %?  %i")
         ("n" "note" entry (file "capture.org")
          "* %? :NOTE:\n%U\n%a\n  %i")
+        ("p" "Protocol" entry (file "capture.org")
+         "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
         ("L" "Protocol Link" entry (file "capture.org")
          "* %? [[%:link][%:description]] \nCaptured On: %U"))
       mce-org-nt-templates
-      '(("o" "Outlook" entry (file "capture.org")
+      '(("o" "outlook" entry (file "capture.org")
          "* TODO %?\n%i\n%U\n%c"))
       mce-org-darwin-templates
       '(("S" "Safari" entry (file "capture.org")
