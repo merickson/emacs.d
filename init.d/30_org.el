@@ -158,7 +158,6 @@
 
 
 ;;; Desktop notifications
-(require 'alert-toast)
 (require 'appt)
 (setq appt-time-msg-list nil)
 (setq appt-display-interval '5)
@@ -173,6 +172,7 @@
 
 ; see https://joonro.github.io/blog/posts/toast-notifications-org-mode-windows.html
 (when (string-equal system-type "windows-nt")
+  (require 'alert-toast)
   (defun mce-toast-appt-display (min-to-app new-time msg)
     
     (alert-toast-notify
