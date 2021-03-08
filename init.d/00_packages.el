@@ -15,7 +15,7 @@
     (package-refresh-contents)
     (package-install package)))
 
-(install-saved-packages)
+;(install-saved-packages)
 
 ; Setup notmuch
 (when (file-directory-p "~/src/notmuch/emacs")

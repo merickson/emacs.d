@@ -68,7 +68,7 @@
 ;; Functions to make finding fonts fast and fun
 (defun font-candidate (fonts)
   "Find an installed font from the list of candidates."
-  (find-if (lambda (f) (find-font (font-spec :name f))) fonts))
+  (cl-find-if (lambda (f) (find-font (font-spec :name f))) fonts))
 
 (setq mce-default-font-list '("Source Code Pro" "Consolas" "Inconsolata" "Menlo"))
 (setq mce-variable-font-list '("Source Sans Pro" "Helvetica" "Segoe UI" "Arial"))
