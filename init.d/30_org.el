@@ -145,9 +145,11 @@
   (delete-other-windows))
 
 ;;; Make sure excorporate updates every time my agenda refreshes.
-;; (defun mce/agenda-update-diary ()
-;;   "call excorporate to update the diary for today"
-;;   (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated"))
+(defun mce/agenda-update-diary ()
+  "call excorporate to update the diary for today"
+  (exco-diary-diary-advice (calendar-current-date) (calendar-current-date) #'message "diary updated"))
+
+(setq excorporate-configuration '(("matt@spideroak-inc.com" . "https://outlook.office.com/EWS/Exchange.asmx") ("merickson@spideroak-ms.com" . "https://outlook.office365.com/EWS/Exchange.asmx")))
 
 ;(excorporate)
 ;(excorporate-diary-enable)
@@ -155,7 +157,8 @@
 ;(add-hook 'org-agenda-cleanup-fancy-diary-hook 'mce/agenda-update-diary)
 
 
-;;; Desktop notifications 
+;;; Desktop notifications
+(require 'alert-toast)
 (require 'appt)
 (setq appt-time-msg-list nil)
 (setq appt-display-interval '5)
@@ -170,17 +173,12 @@
 
 ; see https://joonro.github.io/blog/posts/toast-notifications-org-mode-windows.html
 (when (string-equal system-type "windows-nt")
-  (setq toast-notifier-path "\"c:\\Users\\Matthew Erickson\\git\\toaster\\toast\\bin\\Release\\toast.exe\"")
-  (defun toast-appt-send-notification (title msg)
-    (shell-command (concat toast-notifier-path
-                           " -t \"" title "\""
-                           " -m \"" msg "\""
-                           " -p \"C:\\Users\\Matthew Erickson\\Dropbox\\org_mode.png\"")))
-  (defun toast-appt-display (min-to-app new-time msg)
-    (toast-appt-send-notification
-     (format "Appointment in %s minutes" min-to-app)
-     (format "%s" msg)))
-  (setq appt-disp-window-function (function toast-appt-display)))
+  (defun mce-toast-appt-display (min-to-app new-time msg)
+    
+    (alert-toast-notify
+     `(:title ,(format "Appt: %s" msg) :message ,(format "Coming up in %s minutes" min-to-app))))
+
+  (setq appt-disp-window-function (function mce-toast-appt-display)))
 
 
 ;; org-roam configuration
@@ -191,3 +189,11 @@
                     (font-candidate
                      (mce-make-font-candidates
                       mce-font-size mce-default-font-list)))
+
+
+;; Superstar mode
+(add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
+(setq org-superstar-cycle-headline-bullets nil)
+(setq org-superstar-special-todo-items t)
+(setq org-superstar-headline-bullets-list '(9673 9679 10149 8618))
+(setq org-superstar-todo-bullet-alist '(("TODO" . 9744) ("WAITING" . 9744) ("DEFERRED" . 9744) ("DONE" . 9745) ("CANCELLED" . 9746)))

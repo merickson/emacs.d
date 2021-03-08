@@ -4,7 +4,7 @@
 (require 'nlinum-relative)
 
 ;; Set the color scheme
-(load-theme 'spacemacs-dark t)
+(load-theme 'spacemacs-light t)
 (set-cursor-color "green")
 
 ;; Code display options
@@ -29,7 +29,7 @@
 
 ; Global highlight mode
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "grey25")
+(set-face-background 'hl-line "grey95")
 
 ;; Compilation-mode
 ; Tell compile mode to always follow the bottom of the compile.
